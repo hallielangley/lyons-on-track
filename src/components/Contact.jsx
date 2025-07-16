@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Typography, Card, CardContent, TextField, Button, Container, Box } from '@mui/material'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -22,91 +23,66 @@ function Contact() {
   }
 
   return (
-    <div className="page">
-      <h1>Contact Us</h1>
-      <div className="card">
-        <h2>Get in Touch</h2>
-        <p>Have questions or suggestions? We'd love to hear from you!</p>
-        
-        <form onSubmit={handleSubmit} style={{ maxWidth: '500px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <label htmlFor="name" style={{ display: 'block', marginBottom: '0.5rem' }}>
-              Name:
-            </label>
-            <input
-              type="text"
-              id="name"
+    <Container maxWidth="md">
+      <Typography variant="h3" component="h1" gutterBottom>
+        Contact Us
+      </Typography>
+      
+      <Card>
+        <CardContent>
+          <Typography variant="h5" component="h2" gutterBottom>
+            Get in Touch
+          </Typography>
+          <Typography variant="body1" paragraph>
+            Have questions or suggestions? We'd love to hear from you!
+          </Typography>
+          
+          <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 500, mx: 'auto' }}>
+            <TextField
+              fullWidth
+              label="Name"
               name="name"
               value={formData.name}
               onChange={handleChange}
               required
-              style={{
-                width: '100%',
-                padding: '0.5rem',
-                border: '1px solid #ccc',
-                borderRadius: '4px'
-              }}
+              margin="normal"
             />
-          </div>
-          
-          <div style={{ marginBottom: '1rem' }}>
-            <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem' }}>
-              Email:
-            </label>
-            <input
-              type="email"
-              id="email"
+            
+            <TextField
+              fullWidth
+              label="Email"
               name="email"
+              type="email"
               value={formData.email}
               onChange={handleChange}
               required
-              style={{
-                width: '100%',
-                padding: '0.5rem',
-                border: '1px solid #ccc',
-                borderRadius: '4px'
-              }}
+              margin="normal"
             />
-          </div>
-          
-          <div style={{ marginBottom: '1rem' }}>
-            <label htmlFor="message" style={{ display: 'block', marginBottom: '0.5rem' }}>
-              Message:
-            </label>
-            <textarea
-              id="message"
+            
+            <TextField
+              fullWidth
+              label="Message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               required
-              rows="4"
-              style={{
-                width: '100%',
-                padding: '0.5rem',
-                border: '1px solid #ccc',
-                borderRadius: '4px',
-                resize: 'vertical'
-              }}
+              multiline
+              rows={4}
+              margin="normal"
             />
-          </div>
-          
-          <button 
-            type="submit"
-            style={{
-              backgroundColor: '#646cff',
-              color: 'white',
-              border: 'none',
-              padding: '0.75rem 1.5rem',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              fontSize: '1rem'
-            }}
-          >
-            Send Message
-          </button>
-        </form>
-      </div>
-    </div>
+            
+            <Button 
+              type="submit"
+              variant="contained"
+              size="large"
+              sx={{ mt: 2 }}
+            >
+              Send Message
+            </Button>
+          </Box>
+        </CardContent>
+      </Card>
+    </Container>
   )
 }
 

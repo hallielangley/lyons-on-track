@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Typography, Card, CardContent, Button, Box, Container } from '@mui/material'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
 
@@ -6,28 +7,38 @@ function Home() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="page">
-      <h1>Welcome to Lyons on Track</h1>
-      <p>This is the home page of our React Router demonstration.</p>
+    <Container>
+      <Typography variant="h3" component="h1" gutterBottom>
+        Welcome to Lyons on Track
+      </Typography>
+      <Typography variant="body1" paragraph>
+        This is the home page of our React Router demonstration.
+      </Typography>
       
-      <div>
-        <a href="https://vite.dev" target="_blank">
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 3 }}>
+        <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
+        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-      </div>
+      </Box>
       
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-    </div>
+      <Card>
+        <CardContent>
+          <Button 
+            variant="contained" 
+            onClick={() => setCount((count) => count + 1)}
+            sx={{ mb: 2 }}
+          >
+            count is {count}
+          </Button>
+          <Typography variant="body2" color="text.secondary">
+            Edit <code>src/App.jsx</code> and save to test HMR
+          </Typography>
+        </CardContent>
+      </Card>
+    </Container>
   )
 }
 

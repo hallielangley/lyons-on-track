@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material'
 
 function Navigation() {
   const location = useLocation()
@@ -8,67 +9,49 @@ function Navigation() {
   }
 
   return (
-    <nav style={{
-      backgroundColor: '#f8f9fa',
-      padding: '1rem 0',
-      marginBottom: '2rem',
-      borderBottom: '1px solid #e9ecef'
-    }}>
-      <div style={{
-        maxWidth: '1280px',
-        margin: '0 auto',
-        padding: '0 2rem',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}>
-        <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#646cff' }}>
+    <AppBar position="static" sx={{ mb: 3 }}>
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white' }}>
           Lyons on Track
-        </div>
+        </Typography>
         
-        <div style={{ display: 'flex', gap: '1rem' }}>
-          <Link 
-            to="/" 
-            style={{
-              textDecoration: 'none',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
-              color: isActive('/') ? 'white' : '#646cff',
-              backgroundColor: isActive('/') ? '#646cff' : 'transparent',
-              transition: 'all 0.3s ease'
+        <Box sx={{ display: 'flex', gap: 1 }}>
+          <Button
+            component={Link}
+            to="/"
+            color="inherit"
+            variant={isActive('/') ? 'contained' : 'text'}
+            sx={{
+              backgroundColor: isActive('/') ? 'rgba(255, 255, 255, 0.2)' : 'transparent'
             }}
           >
             Home
-          </Link>
-          <Link 
-            to="/about" 
-            style={{
-              textDecoration: 'none',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
-              color: isActive('/about') ? 'white' : '#646cff',
-              backgroundColor: isActive('/about') ? '#646cff' : 'transparent',
-              transition: 'all 0.3s ease'
+          </Button>
+          <Button
+            component={Link}
+            to="/about"
+            color="inherit"
+            variant={isActive('/about') ? 'contained' : 'text'}
+            sx={{
+              backgroundColor: isActive('/about') ? 'rgba(255, 255, 255, 0.2)' : 'transparent'
             }}
           >
             About
-          </Link>
-          <Link 
-            to="/contact" 
-            style={{
-              textDecoration: 'none',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
-              color: isActive('/contact') ? 'white' : '#646cff',
-              backgroundColor: isActive('/contact') ? '#646cff' : 'transparent',
-              transition: 'all 0.3s ease'
+          </Button>
+          <Button
+            component={Link}
+            to="/contact"
+            color="inherit"
+            variant={isActive('/contact') ? 'contained' : 'text'}
+            sx={{
+              backgroundColor: isActive('/contact') ? 'rgba(255, 255, 255, 0.2)' : 'transparent'
             }}
           >
             Contact
-          </Link>
-        </div>
-      </div>
-    </nav>
+          </Button>
+        </Box>
+      </Toolbar>
+    </AppBar>
   )
 }
 

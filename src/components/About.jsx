@@ -1,37 +1,60 @@
+import { Typography, Card, CardContent, List, ListItem, ListItemText, Container, Box } from '@mui/material'
+
 function About() {
   return (
-    <div className="page">
-      <h1>About Lyons on Track</h1>
-      <div className="card">
-        <h2>Project Information</h2>
-        <p>
-          This is a React application built with Vite that demonstrates routing capabilities
-          using React Router DOM.
-        </p>
-        <p>
-          The project showcases:
-        </p>
-        <ul style={{ textAlign: 'left', maxWidth: '400px', margin: '0 auto' }}>
-          <li>React Router for navigation</li>
-          <li>Component-based architecture</li>
-          <li>Modern React patterns</li>
-          <li>Responsive design</li>
-        </ul>
-      </div>
+    <Container maxWidth="md">
+      <Typography variant="h3" component="h1" gutterBottom>
+        About Lyons on Track
+      </Typography>
       
-      <div className="card">
-        <h3>Technologies Used</h3>
-        <p>
-          <strong>Frontend:</strong> React, Vite, React Router DOM
-        </p>
-        <p>
-          <strong>Styling:</strong> CSS3 with modern features
-        </p>
-        <p>
-          <strong>Deployment:</strong> GitHub Pages
-        </p>
-      </div>
-    </div>
+      <Card sx={{ mb: 3 }}>
+        <CardContent>
+          <Typography variant="h5" component="h2" gutterBottom>
+            Project Information
+          </Typography>
+          <Typography variant="body1" paragraph>
+            This is a React application built with Vite that demonstrates routing capabilities
+            using React Router DOM.
+          </Typography>
+          <Typography variant="body1" paragraph>
+            The project showcases:
+          </Typography>
+          <List>
+            <ListItem>
+              <ListItemText primary="React Router for navigation" />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="Component-based architecture" />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="Modern React patterns" />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="Responsive design" />
+            </ListItem>
+          </List>
+        </CardContent>
+      </Card>
+      
+      <Card>
+        <CardContent>
+          <Typography variant="h5" component="h3" gutterBottom>
+            Technologies Used
+          </Typography>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+            <Typography variant="body1">
+              <strong>Frontend:</strong> React, Vite, React Router DOM
+            </Typography>
+            <Typography variant="body1">
+              <strong>Styling:</strong> Material-UI (MUI)
+            </Typography>
+            <Typography variant="body1">
+              <strong>Deployment:</strong> GitHub Pages
+            </Typography>
+          </Box>
+        </CardContent>
+      </Card>
+    </Container>
   )
 }
 
