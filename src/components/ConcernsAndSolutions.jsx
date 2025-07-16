@@ -9,60 +9,60 @@ function ConcernsAndSolutions() {
         {
             concern: (
                 <Typography variant={getTypographyVariant('h6', 'h5')} sx={{ color: 'white', textAlign: 'center' }}>
-                    Sewer Bill Online Payment
+                    Online Sewer Payments
                 </Typography>
             ),
             solution: (
                 <Typography variant="body2" sx={{ color: 'white', textAlign: 'center' }}>
-                    We'll build a new, modern website where residents can pay their sewer bills online. In-person payments will still be available.
+                    We'll create a modern, user-friendly website where residents can easily pay their sewer bills online. Traditional in-person payments will remain available for those who prefer them.
                 </Typography>
             )
         },
         {
             concern: (
                 <Typography variant={getTypographyVariant('h6', 'h5')} sx={{ color: 'white', textAlign: 'center' }}>
-                    Speeding Issues
+                    Traffic Safety
                 </Typography>
             ),
             solution: (
                 <Typography variant="body2" sx={{ color: 'white', textAlign: 'center' }}>
-                    We plan to add tree-lined sidewalks that naturally slow down traffic and make our town more walkable and beautiful.
+                    We'll implement tree-lined sidewalks and traffic calming measures that naturally slow down vehicles while making our town more walkable and visually appealing.
                 </Typography>
             )
         },
         {
             concern: (
                 <Typography variant={getTypographyVariant('h6', 'h5')} sx={{ color: 'white', textAlign: 'center' }}>
-                    Stray Cat Issue
+                    Stray Cat Management
                 </Typography>
             ),
             solution: (
                 <Typography variant="body2" sx={{ color: 'white', textAlign: 'center' }}>
-                    We want to partner with local nonprofits to start a humane catch-and-release program for stray cats.
+                    We'll partner with local animal welfare organizations to establish a humane trap-neuter-return program that addresses the stray cat population responsibly.
                 </Typography>
             )
         },
         {
             concern: (
                 <Typography variant={getTypographyVariant('h6', 'h5')} sx={{ color: 'white', textAlign: 'center' }}>
-                    Stormwater & Snow
+                    Infrastructure & Weather
                 </Typography>
             ),
             solution: (
                 <Typography variant="body2" sx={{ color: 'white', textAlign: 'center' }}>
-                    We'll work with nearby boroughs and townships to share costs and improve snow removal and salting. We will also invest in better stormwater systems to reduce flooding.
+                    We'll collaborate with neighboring municipalities to share costs for snow removal and road maintenance, while investing in improved stormwater systems to prevent flooding.
                 </Typography>
             )
         },
         {
             concern: (
                 <Typography variant={getTypographyVariant('h6', 'h5')} sx={{ color: 'white', textAlign: 'center' }}>
-                    Blighted Properties
+                    Property Revitalization
                 </Typography>
             ),
             solution: (
                 <Typography variant="body2" sx={{ color: 'white', textAlign: 'center' }}>
-                    We support a new ordinance to address neglected properties. We also want to shift from a property tax to a land value tax, which rewards productive use and could lower taxes on average for most residents.
+                    We'll introduce a new ordinance to address neglected properties and explore transitioning to a land value tax system that could lower taxes for most residents while encouraging productive land use.
                 </Typography>
             )
         }
@@ -74,24 +74,27 @@ function ConcernsAndSolutions() {
                 variant='h1'
                 sx={{
                     fontSize: isMobile ? '1.5rem' : '2rem',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    mb: 2
                 }}
             >
-                Top Concerns & Solutions
+                Your Concerns, Our Solutions
             </Typography>
 
-            <Typography >From listening to the residents of Lyons, here is what we found to be the top 5 issues:</Typography>
+            <Typography sx={{ mb: 3, fontSize: isMobile ? '0.9rem' : '1rem' }}>
+                After listening to Lyons residents, we've identified the top priorities and developed practical solutions for each.
+            </Typography>
 
-
-            <Typography>
-                Click on each concern to see our proposed solution
+            <Typography sx={{ mb: 4, fontSize: isMobile ? '0.8rem' : '0.9rem', fontStyle: 'italic' }}>
+                Tap each concern to see our proposed solution
             </Typography>
 
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: isMobile ? 2 : 4
+                gap: isMobile ? 2 : 4,
+                mb: 4
             }}>
                 {/* First row - 3 cards */}
                 <Box sx={{
@@ -143,7 +146,10 @@ function ConcernsAndSolutions() {
                     ))}
                 </Box>
             </Box>
-            <Typography>We are dedicated as a slate to tackling these concerns. </Typography>
+            
+            <Typography sx={{ fontSize: isMobile ? '0.9rem' : '1rem', fontWeight: 500 }}>
+                We're committed to working together to make Lyons an even better place to live.
+            </Typography>
         </Container>
     )
 }
