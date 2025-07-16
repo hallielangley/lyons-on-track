@@ -6,6 +6,7 @@ import Contact from '../components/Contact'
 import HowToVote from '../components/HowToVote'
 import ConcernsAndSolutions from '../components/ConcernsAndSolutions'
 import ErrorBoundary from '../components/ErrorBoundary'
+import ScrollableSectionTest from '../components/ScrollableSectionTest'
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'about',
-        element: <About />,
+        element: <ScrollableSectionTest />,
       },
       {
         path: 'contact',
