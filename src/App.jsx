@@ -1,9 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material'
-import Navigation from './components/Navigation'
-import Home from './components/Home'
-import About from './components/About'
-import Contact from './components/Contact'
+import { router } from './routes'
 import './App.css'
 
 const theme = createTheme({
@@ -21,16 +18,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <div>
-          <Navigation />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </div>
-      </Router>
+      <RouterProvider router={router} />
     </ThemeProvider>
   )
 }
