@@ -2,15 +2,16 @@ import { Typography, Card, CardContent, Box, Container, Paper, List, ListItem, L
 import { useResponsive } from '../hooks/useResponsive'
 import { responsiveStyles, getResponsiveValue } from '../utils/responsiveStyles'
 import HomeNavigation from './HomeNavigation'
+import ElectionDayInfo from './ElectionDayInfo'
 
 function Home() {
-  const { 
-    isMobile, 
-    getTypographyVariant, 
-    getSpacing, 
-    getFontSize, 
-    getPadding, 
-    getContainerPadding 
+  const {
+    isMobile,
+    getTypographyVariant,
+    getSpacing,
+    getFontSize,
+    getPadding,
+    getContainerPadding
   } = useResponsive()
 
   const topConcerns = [
@@ -23,42 +24,6 @@ function Home() {
 
   return (
     <Container maxWidth="lg" sx={{ px: getContainerPadding() }}>
-      {/* Vote Section */}
-      <Paper elevation={3} sx={{ 
-        p: getResponsiveValue(responsiveStyles.padding.paper, isMobile), 
-        mb: getSpacing(3, 4), 
-        textAlign: 'center' 
-      }}>
-        <Typography variant={getTypographyVariant('h5', 'h4')} component="h2" gutterBottom>
-          VOTE
-        </Typography>
-        <Typography variant={getTypographyVariant('h6', 'h5')} gutterBottom>
-          Alexander Darlington for Mayor
-        </Typography>
-        <Typography variant={getTypographyVariant('h6', 'h5')} gutterBottom>
-          Tracey Sutton for Borough Council
-        </Typography>
-        <Typography variant={getTypographyVariant('h6', 'h5')} gutterBottom sx={{ mt: 2 }}>
-          WRITE IN
-        </Typography>
-        <Typography variant={getTypographyVariant('body1', 'h6')} gutterBottom>
-          Hallie Langley
-        </Typography>
-        <Typography variant={getTypographyVariant('body1', 'h6')} gutterBottom>
-          Janet Mossie-Lance
-        </Typography>
-        <Typography variant={getTypographyVariant('body1', 'h6')} gutterBottom>
-          For Borough Council
-        </Typography>
-        
-        <Typography variant={getTypographyVariant('h6', 'h5')} sx={{ mt: 3, fontWeight: 'bold' }}>
-          ON NOVEMBER 4
-        </Typography>
-        <Typography variant="body1" sx={{ fontSize: getResponsiveValue(responsiveStyles.fontSize.normal, isMobile) }}>
-          Polls are open from 7 a.m. to 8 p.m. on Election Day. Remember, if you are in line by 8 p.m., you can vote.
-        </Typography>
-      </Paper>
-
       {/* Navigation Buttons */}
       <HomeNavigation />
 
@@ -86,7 +51,7 @@ function Home() {
           <List sx={{ py: 0 }}>
             {topConcerns.map((concern, index) => (
               <ListItem key={index} sx={{ px: 0, py: isMobile ? 0.5 : 1 }}>
-                <ListItemText 
+                <ListItemText
                   primary={
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
                       <Chip label={index + 1} color="primary" size="small" />
