@@ -73,36 +73,32 @@ function ConcernsAndSolutions() {
             px: isMobile ? 2 : 3, 
             textAlign: 'center'
         }}>
-            {/* Fixed Header Section */}
-            <Box sx={{ flexShrink: 0, pt: 1 }}>
-                <Typography
-                    variant='h1'
-                    sx={{
-                        fontSize: isMobile ? '1.3rem' : '1.8rem',
-                        fontWeight: 'bold',
-                        mb: 1
-                    }}
-                >
-                    Your Concerns, Our Solutions
-                </Typography>
+            <Typography
+                variant='h1'
+                sx={{
+                    fontSize: isMobile ? '1.3rem' : '1.8rem',
+                    fontWeight: 'bold',
+                    mb: 1
+                }}
+            >
+                Your Concerns, Our Solutions
+            </Typography>
 
-                <Typography sx={{ mb: 1, fontSize: isMobile ? '0.8rem' : '0.9rem' }}>
-                    After listening to Lyons residents, we've identified the top priorities and developed practical solutions for each.
-                </Typography>
+            <Typography sx={{ mb: 1, fontSize: isMobile ? '0.8rem' : '0.9rem' }}>
+                After listening to Lyons residents, we've identified the top priorities and developed practical solutions for each.
+            </Typography>
 
-                <Typography sx={{ mb: 1, fontSize: isMobile ? '0.7rem' : '0.8rem', fontStyle: 'italic' }}>
-                    Tap each concern to see our proposed solution
-                </Typography>
-            </Box>
+            <Typography sx={{ mb: 1, fontSize: isMobile ? '0.7rem' : '0.8rem', fontStyle: 'italic' }}>
+                Tap each concern to see our proposed solution
+            </Typography>
 
-            {/* Cards Section - Only takes space it needs */}
+            {/* Cards Section */}
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 gap: isMobile ? 1 : 3,
-                py: 1,
-                overflowY: 'auto'
+                py: 1
             }}>
                 {/* First row - 3 cards */}
                 <Box sx={{
@@ -155,12 +151,9 @@ function ConcernsAndSolutions() {
                 </Box>
             </Box>
 
-            {/* Fixed Footer Section */}
-            <Box sx={{ flexShrink: 0, pb: 1 }}>
-                <Typography sx={{ fontSize: isMobile ? '0.8rem' : '0.9rem', fontWeight: 500 }}>
-                    We're committed to working together to make Lyons an even better place to live.
-                </Typography>
-            </Box>
+            <Typography sx={{ fontSize: isMobile ? '0.8rem' : '0.9rem', fontWeight: 500, mt: 2 }}>
+                We're committed to working together to make Lyons an even better place to live.
+            </Typography>
         </Container>
     )
 }

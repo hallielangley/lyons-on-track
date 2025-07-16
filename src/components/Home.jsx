@@ -2,7 +2,6 @@ import { Typography, Card, CardContent, Box, Container, Paper, List, ListItem, L
 import { useResponsive } from '../hooks/useResponsive'
 import { responsiveStyles, getResponsiveValue } from '../utils/responsiveStyles'
 import HomeNavigation from './HomeNavigation'
-import FlipCardExample from './FlipCardExample'
 import ConcernsAndSolutions from './ConcernsAndSolutions'
 
 function Home() {
@@ -20,7 +19,7 @@ function Home() {
       {/* Navigation Buttons */}
       <HomeNavigation />
 
-      
+
       {/* Our Vision */}
       <Card sx={{ mb: getSpacing(3, 4) }}>
         <CardContent sx={{ p: getResponsiveValue(responsiveStyles.padding.card, isMobile) }}>
@@ -32,7 +31,6 @@ function Home() {
           </Typography>
         </CardContent>
       </Card>
-
     </Container>
   )
 }
