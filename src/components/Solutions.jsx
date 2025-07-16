@@ -1,4 +1,5 @@
 import { Typography, Card, CardContent, Box, Container, Grid, Paper, useTheme, useMediaQuery } from '@mui/material'
+import ConcernsAndSolutions from './ConcernsAndSolutions'
 
 function Solutions() {
   const theme = useTheme()
@@ -6,6 +7,7 @@ function Solutions() {
 
   return (
     <Container maxWidth="lg" sx={{ px: isMobile ? 2 : 3 }}>
+      <ConcernsAndSolutions />
       <Typography 
         variant={isMobile ? "h4" : "h3"} 
         component="h1" 
