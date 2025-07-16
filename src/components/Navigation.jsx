@@ -15,7 +15,7 @@ function Navigation() {
           Lyons on Track
         </Typography>
         
-        <Box sx={{ display: 'flex', gap: 1 }}>
+        <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
           <Button
             component={Link}
             to="/"
@@ -26,6 +26,28 @@ function Navigation() {
             }}
           >
             Home
+          </Button>
+          <Button
+            component={Link}
+            to="/how-to-vote"
+            color="inherit"
+            variant={isActive('/how-to-vote') ? 'contained' : 'text'}
+            sx={{
+              backgroundColor: isActive('/how-to-vote') ? 'rgba(255, 255, 255, 0.2)' : 'transparent'
+            }}
+          >
+            How to Vote
+          </Button>
+          <Button
+            component={Link}
+            to="/solutions"
+            color="inherit"
+            variant={isActive('/solutions') ? 'contained' : 'text'}
+            sx={{
+              backgroundColor: isActive('/solutions') ? 'rgba(255, 255, 255, 0.2)' : 'transparent'
+            }}
+          >
+            Solutions
           </Button>
           <Button
             component={Link}
