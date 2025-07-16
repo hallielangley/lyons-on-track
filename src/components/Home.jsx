@@ -1,6 +1,7 @@
 import { Typography, Card, CardContent, Box, Container, Paper, List, ListItem, ListItemText, Chip } from '@mui/material'
 import { useResponsive } from '../hooks/useResponsive'
 import { responsiveStyles, getResponsiveValue } from '../utils/responsiveStyles'
+import HomeNavigation from './HomeNavigation'
 
 function Home() {
   const { 
@@ -22,20 +23,6 @@ function Home() {
 
   return (
     <Container maxWidth="lg" sx={{ px: getContainerPadding() }}>
-      {/* Main Heading */}
-      <Typography 
-        variant={getTypographyVariant('h3', 'h2')}
-        component="h1" 
-        gutterBottom 
-        sx={{ 
-          textAlign: 'center', 
-          mb: getSpacing(3, 4),
-          fontSize: getResponsiveValue(responsiveStyles.fontSize.heading, isMobile)
-        }}
-      >
-        No Agenda. Here to Listen.
-      </Typography>
-
       {/* Vote Section */}
       <Paper elevation={3} sx={{ 
         p: getResponsiveValue(responsiveStyles.padding.paper, isMobile), 
@@ -71,6 +58,9 @@ function Home() {
           Polls are open from 7 a.m. to 8 p.m. on Election Day. Remember, if you are in line by 8 p.m., you can vote.
         </Typography>
       </Paper>
+
+      {/* Navigation Buttons */}
+      <HomeNavigation />
 
       {/* Our Vision */}
       <Card sx={{ mb: getSpacing(3, 4) }}>
