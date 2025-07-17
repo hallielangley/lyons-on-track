@@ -1,25 +1,25 @@
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation } from "react-router-dom";
 
 // Custom hook for navigation with additional features
 export const useAppNavigation = () => {
-  const navigate = useNavigate()
-  const location = useLocation()
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const goTo = (path, options = {}) => {
-    navigate(path, options)
-  }
+    navigate(path, options);
+  };
 
   const goBack = () => {
-    navigate(-1)
-  }
+    navigate(-1);
+  };
 
   const goHome = () => {
-    navigate('/')
-  }
+    navigate("/");
+  };
 
   const isActiveRoute = (path) => {
-    return location.pathname === path
-  }
+    return location.pathname === path;
+  };
 
   return {
     goTo,
@@ -27,28 +27,28 @@ export const useAppNavigation = () => {
     goHome,
     isActiveRoute,
     currentPath: location.pathname,
-  }
-}
+  };
+};
 
 // Route constants for better maintainability
 export const ROUTES = {
-  HOME: '/',
-  ABOUT: '/about',
-  CONTACT: '/contact',
-} 
+  HOME: "/",
+  ABOUT: "/about",
+  CONTACT: "/contact",
+};
 
 // Route metadata for additional information
 export const ROUTE_METADATA = {
   [ROUTES.HOME]: {
-    title: 'Home',
-    description: 'Welcome to Lyons on Track',
+    title: "Home",
+    description: "Welcome to Lyons on Track",
   },
   [ROUTES.ABOUT]: {
-    title: 'About',
-    description: 'Learn more about us',
+    title: "About",
+    description: "Learn more about us",
   },
   [ROUTES.CONTACT]: {
-    title: 'Contact',
-    description: 'Get in touch with us',
+    title: "Contact",
+    description: "Get in touch with us",
   },
-} 
+};

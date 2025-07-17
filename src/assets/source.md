@@ -23,10 +23,10 @@ We are not running to push our own agenda – we’re running to carry yours. We
 
 From listening to the residents of Lyons, here is what we found to be the top 5 issues:
 
-1. Having it so the sewer bill can be paid online  
-2. Speeding issues  
-3. Stray cat issue  
-4. Stormwater & Snow concerns  
+1. Having it so the sewer bill can be paid online
+2. Speeding issues
+3. Stray cat issue
+4. Stormwater & Snow concerns
 5. Blighted properties
 
 We are dedicated as a slate to tackling these concerns. Learn more about our proposed solutions in our solutions section.
@@ -105,4 +105,4 @@ Janet is eager for the opportunity to work with each and every resident to revit
 
 # **Contact**
 
-Have any comments, questions, or concerns? Reach out to [adarlington44@gmail.com](mailto:adarlington44@gmail.com). 
+Have any comments, questions, or concerns? Reach out to [adarlington44@gmail.com](mailto:adarlington44@gmail.com).

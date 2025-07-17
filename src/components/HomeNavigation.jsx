@@ -1,21 +1,32 @@
-import { Link } from 'react-router-dom'
-import { Button, Box, Grid } from '@mui/material'
-import { useResponsive } from '../hooks/useResponsive'
-import { responsiveStyles, getResponsiveValue } from '../utils/responsiveStyles'
+import { Link } from "react-router-dom";
+import { Button, Box, Grid } from "@mui/material";
+import { useResponsive } from "../hooks/useResponsive";
+import {
+  responsiveStyles,
+  getResponsiveValue,
+} from "../utils/responsiveStyles";
 
 function HomeNavigation() {
-  const { isMobile, getButtonSize, getNavText } = useResponsive()
+  const { isMobile, getButtonSize, getNavText } = useResponsive();
 
   const navItems = [
-    { path: '/how-to-vote', text: getNavText('Vote', 'How to Vote'), color: 'primary' },
-    { path: '/solutions', text: 'Solutions', color: 'secondary' },
-    { path: '/about', text: 'About Our Candidates', color: 'success' },
-    { path: '/contact', text: 'Contact Us', color: 'info' },
-  ]
+    {
+      path: "/how-to-vote",
+      text: getNavText("Vote", "How to Vote"),
+      color: "primary",
+    },
+    { path: "/solutions", text: "Solutions", color: "secondary" },
+    { path: "/about", text: "About Our Candidates", color: "success" },
+    { path: "/contact", text: "Contact Us", color: "info" },
+  ];
 
   return (
     <Box sx={{ my: getResponsiveValue({ mobile: 4, desktop: 6 }, isMobile) }}>
-      <Grid container spacing={getResponsiveValue({ mobile: 2, desktop: 3 }, isMobile)} justifyContent="center">
+      <Grid
+        container
+        spacing={getResponsiveValue({ mobile: 2, desktop: 3 }, isMobile)}
+        justifyContent="center"
+      >
         {navItems.map((item) => (
           <Grid item xs={12} sm={6} md={3} key={item.path}>
             <Button
@@ -28,16 +39,19 @@ function HomeNavigation() {
               sx={{
                 py: getResponsiveValue({ mobile: 2, desktop: 3 }, isMobile),
                 px: getResponsiveValue({ mobile: 2, desktop: 4 }, isMobile),
-                fontSize: getResponsiveValue(responsiveStyles.fontSize.large, isMobile),
-                fontWeight: 'bold',
-                textTransform: 'none',
+                fontSize: getResponsiveValue(
+                  responsiveStyles.fontSize.large,
+                  isMobile,
+                ),
+                fontWeight: "bold",
+                textTransform: "none",
                 borderRadius: 2,
                 boxShadow: 3,
-                '&:hover': {
+                "&:hover": {
                   boxShadow: 6,
-                  transform: 'translateY(-2px)',
-                  transition: 'all 0.2s ease-in-out'
-                }
+                  transform: "translateY(-2px)",
+                  transition: "all 0.2s ease-in-out",
+                },
               }}
             >
               {item.text}
@@ -46,7 +60,7 @@ function HomeNavigation() {
         ))}
       </Grid>
     </Box>
-  )
+  );
 }
 
-export default HomeNavigation 
+export default HomeNavigation;

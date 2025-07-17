@@ -18,6 +18,7 @@ Before running this project, make sure you have the following installed:
 - **npm** (comes with Node.js) or **yarn**
 
 You can check your versions with:
+
 ```bash
 node --version
 npm --version
@@ -80,6 +81,7 @@ This project is configured to deploy to GitHub Pages.
 If you prefer to deploy manually:
 
 1. **Build the project**:
+
    ```bash
    npm run build
    ```
@@ -89,6 +91,7 @@ If you prefer to deploy manually:
 ### Deployment Configuration
 
 The project is configured with:
+
 - **Homepage**: Set to `https://hallielangley.github.io/lyons-on-track` in `package.json`
 - **Build output**: The `dist` folder contains the production build
 - **GitHub Pages**: Configured to serve from the `gh-pages` branch
@@ -144,6 +147,7 @@ lyons-on-track/
 ### Getting Help
 
 If you encounter any issues:
+
 1. Check the console for error messages
 2. Ensure all dependencies are properly installed
 3. Try clearing the `node_modules` folder and running `npm install` again

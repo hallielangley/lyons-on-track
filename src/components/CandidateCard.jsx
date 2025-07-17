@@ -1,52 +1,76 @@
-import { Typography, Card, CardContent, Box, Avatar } from '@mui/material'
-import { useResponsive } from '../hooks/useResponsive'
-import { responsiveStyles, getResponsiveValue } from '../utils/responsiveStyles'
+import { Typography, Card, CardContent, Box, Avatar } from "@mui/material";
+import { useResponsive } from "../hooks/useResponsive";
+import {
+  responsiveStyles,
+  getResponsiveValue,
+} from "../utils/responsiveStyles";
 
 function CandidateCard({ candidate }) {
-  const { isMobile, getTypographyVariant, getAvatarSize } = useResponsive()
+  const { isMobile, getTypographyVariant, getAvatarSize } = useResponsive();
 
   return (
-    <Card sx={{ height: '100%' }}>
-      <CardContent sx={{ p: getResponsiveValue(responsiveStyles.padding.card, isMobile) }}>
-        <Box sx={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          mb: 2,
-          flexDirection: isMobile ? 'column' : 'row',
-          textAlign: isMobile ? 'center' : 'left'
-        }}>
-          <Avatar sx={{ 
-            width: getAvatarSize(60, 80), 
-            height: getAvatarSize(60, 80), 
-            mr: isMobile ? 0 : 2,
-            mb: isMobile ? 1 : 0
-          }}>
+    <Card sx={{ height: "100%" }}>
+      <CardContent
+        sx={{ p: getResponsiveValue(responsiveStyles.padding.card, isMobile) }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            mb: 2,
+            flexDirection: isMobile ? "column" : "row",
+            textAlign: isMobile ? "center" : "left",
+          }}
+        >
+          <Avatar
+            sx={{
+              width: getAvatarSize(60, 80),
+              height: getAvatarSize(60, 80),
+              mr: isMobile ? 0 : 2,
+              mb: isMobile ? 1 : 0,
+            }}
+          >
             {candidate.initials}
           </Avatar>
-          <Typography variant={getTypographyVariant('h6', 'h5')} component="h2">
+          <Typography variant={getTypographyVariant("h6", "h5")} component="h2">
             {candidate.name} - {candidate.position}
           </Typography>
         </Box>
-        
+
         {candidate.imageNote && (
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 2, fontSize: getResponsiveValue(responsiveStyles.fontSize.small, isMobile) }}>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{
+              mb: 2,
+              fontSize: getResponsiveValue(
+                responsiveStyles.fontSize.small,
+                isMobile,
+              ),
+            }}
+          >
             Note: {candidate.imageNote}
           </Typography>
         )}
-        
+
         {candidate.bio.map((paragraph, index) => (
-          <Typography 
+          <Typography
             key={index}
-            variant="body1" 
+            variant="body1"
             paragraph={index < candidate.bio.length - 1}
-            sx={{ fontSize: getResponsiveValue(responsiveStyles.fontSize.normal, isMobile) }}
+            sx={{
+              fontSize: getResponsiveValue(
+                responsiveStyles.fontSize.normal,
+                isMobile,
+              ),
+            }}
           >
             {paragraph}
           </Typography>
         ))}
       </CardContent>
     </Card>
-  )
+  );
 }
 
-export default CandidateCard 
+export default CandidateCard;

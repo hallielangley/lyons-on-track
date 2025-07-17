@@ -1,4 +1,4 @@
-import { Box, CircularProgress, Typography } from '@mui/material'
+import { Box, CircularProgress, Typography } from "@mui/material";
 
 function LoadingSpinner() {
   return (
@@ -14,7 +14,7 @@ function LoadingSpinner() {
         Loading...
       </Typography>
     </Box>
-  )
+  );
 }
 
-export default LoadingSpinner 
+export default LoadingSpinner;

@@ -1,32 +1,41 @@
-import { Link } from 'react-router-dom'
-import { AppBar, Toolbar, Typography } from '@mui/material'
-import { useResponsive } from '../hooks/useResponsive'
-import { responsiveStyles, getResponsiveValue } from '../utils/responsiveStyles'
+import { Link } from "react-router-dom";
+import { AppBar, Toolbar, Typography } from "@mui/material";
+import { useResponsive } from "../hooks/useResponsive";
+import {
+  responsiveStyles,
+  getResponsiveValue,
+} from "../utils/responsiveStyles";
 
 function Navigation() {
-  const { isMobile } = useResponsive()
+  const { isMobile } = useResponsive();
 
   return (
-    <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-      <Toolbar sx={{ justifyContent: 'center' }}>
-        <Typography 
+    <AppBar
+      position="fixed"
+      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+    >
+      <Toolbar sx={{ justifyContent: "center" }}>
+        <Typography
           component={Link}
           to="/"
-          variant="h6" 
-          sx={{ 
-            color: 'white',
-            textDecoration: 'none',
-            fontSize: getResponsiveValue(responsiveStyles.fontSize.large, isMobile),
-            fontWeight: 'bold',
-            textAlign: 'center',
-            cursor: 'pointer',
+          variant="h6"
+          sx={{
+            color: "white",
+            textDecoration: "none",
+            fontSize: getResponsiveValue(
+              responsiveStyles.fontSize.large,
+              isMobile,
+            ),
+            fontWeight: "bold",
+            textAlign: "center",
+            cursor: "pointer",
           }}
         >
           No Agenda. Here to Listen.
         </Typography>
       </Toolbar>
     </AppBar>
-  )
+  );
 }
 
-export default Navigation 
+export default Navigation;
