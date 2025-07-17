@@ -1,23 +1,25 @@
-import { Link } from "react-router-dom";
-import { Button, Box, Grid } from "@mui/material";
-import { useResponsive } from "../hooks/useResponsive";
+import { Link } from 'react-router-dom';
+
+import { Box, Button, Grid } from '@mui/material';
+
+import { useResponsive } from '../hooks/useResponsive';
 import {
-  responsiveStyles,
   getResponsiveValue,
-} from "../utils/responsiveStyles";
+  responsiveStyles,
+} from '../utils/responsiveStyles';
 
 function HomeNavigation() {
   const { isMobile, getButtonSize, getNavText } = useResponsive();
 
   const navItems = [
     {
-      path: "/how-to-vote",
-      text: getNavText("Vote", "How to Vote"),
-      color: "primary",
+      path: '/how-to-vote',
+      text: getNavText('Vote', 'How to Vote'),
+      color: 'primary',
     },
-    { path: "/solutions", text: "Solutions", color: "secondary" },
-    { path: "/about", text: "About Our Candidates", color: "success" },
-    { path: "/contact", text: "Contact Us", color: "info" },
+    { path: '/solutions', text: 'Solutions', color: 'secondary' },
+    { path: '/about', text: 'About Our Candidates', color: 'success' },
+    { path: '/contact', text: 'Contact Us', color: 'info' },
   ];
 
   return (
@@ -41,16 +43,16 @@ function HomeNavigation() {
                 px: getResponsiveValue({ mobile: 2, desktop: 4 }, isMobile),
                 fontSize: getResponsiveValue(
                   responsiveStyles.fontSize.large,
-                  isMobile,
+                  isMobile
                 ),
-                fontWeight: "bold",
-                textTransform: "none",
+                fontWeight: 'bold',
+                textTransform: 'none',
                 borderRadius: 2,
                 boxShadow: 3,
-                "&:hover": {
+                '&:hover': {
                   boxShadow: 6,
-                  transform: "translateY(-2px)",
-                  transition: "all 0.2s ease-in-out",
+                  transform: 'translateY(-2px)',
+                  transition: 'all 0.2s ease-in-out',
                 },
               }}
             >

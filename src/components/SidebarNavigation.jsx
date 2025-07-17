@@ -1,26 +1,29 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom';
+
+import { useState } from 'react';
+
+import CloseIcon from '@mui/icons-material/Close';
+import HowToVoteIcon from '@mui/icons-material/HowToVote';
+import MenuIcon from '@mui/icons-material/Menu';
 import {
+  AppBar,
+  Box,
+  Divider,
   Drawer,
+  IconButton,
   List,
   ListItem,
   ListItemButton,
   ListItemText,
-  IconButton,
-  Box,
-  Typography,
-  Divider,
   Toolbar,
-  AppBar,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import HowToVoteIcon from "@mui/icons-material/HowToVote";
-import { useResponsive } from "../hooks/useResponsive";
+  Typography,
+} from '@mui/material';
+
+import { useResponsive } from '../hooks/useResponsive';
 import {
-  responsiveStyles,
   getResponsiveValue,
-} from "../utils/responsiveStyles";
+  responsiveStyles,
+} from '../utils/responsiveStyles';
 
 function SidebarNavigation() {
   const [open, setOpen] = useState(false);
@@ -29,13 +32,13 @@ function SidebarNavigation() {
 
   const navItems = [
     {
-      path: "/how-to-vote",
-      text: getNavText("Vote", "How to Vote"),
-      color: "secondary",
+      path: '/how-to-vote',
+      text: getNavText('Vote', 'How to Vote'),
+      color: 'secondary',
     },
-    { path: "/solutions", text: "Solutions", color: "success" },
-    { path: "/about", text: "About Our Candidates", color: "info" },
-    { path: "/contact", text: "Contact Us", color: "warning" },
+    { path: '/solutions', text: 'Solutions', color: 'success' },
+    { path: '/about', text: 'About Our Candidates', color: 'info' },
+    { path: '/contact', text: 'Contact Us', color: 'warning' },
   ];
 
   const handleDrawerToggle = () => {
@@ -51,7 +54,7 @@ function SidebarNavigation() {
   // App bar/header with MenuIcon, only when Drawer is closed
   const appBarHeader = (
     <AppBar>
-      <Toolbar sx={{ justifyContent: "space-between" }}>
+      <Toolbar sx={{ justifyContent: 'space-between' }}>
         <IconButton onClick={handleDrawerToggle} color="inherit">
           <MenuIcon />
         </IconButton>
@@ -60,15 +63,15 @@ function SidebarNavigation() {
           to="/"
           variant="h6"
           sx={{
-            color: "white",
-            textDecoration: "none",
+            color: 'white',
+            textDecoration: 'none',
             fontSize: getResponsiveValue(
               responsiveStyles.fontSize.large,
-              isMobile,
+              isMobile
             ),
-            fontWeight: "bold",
-            textAlign: "center",
-            cursor: "pointer",
+            fontWeight: 'bold',
+            textAlign: 'center',
+            cursor: 'pointer',
           }}
         >
           No Agenda. Here to Listen.
@@ -85,10 +88,10 @@ function SidebarNavigation() {
       <Box
         sx={{
           p: 2,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
         }}
       >
         <IconButton onClick={handleDrawerToggle} color="inherit">
@@ -97,10 +100,10 @@ function SidebarNavigation() {
         <Typography
           variant="h6"
           sx={{
-            fontWeight: "bold",
+            fontWeight: 'bold',
             fontSize: getResponsiveValue(
               responsiveStyles.fontSize.large,
-              isMobile,
+              isMobile
             ),
           }}
         >
@@ -120,14 +123,14 @@ function SidebarNavigation() {
                 mx: 1,
                 borderRadius: 1,
                 mb: 0.5,
-                "&.Mui-selected": {
+                '&.Mui-selected': {
                   backgroundColor: `${item.color}.main`,
-                  color: "white",
-                  "&:hover": {
+                  color: 'white',
+                  '&:hover': {
                     backgroundColor: `${item.color}.dark`,
                   },
                 },
-                "&:hover": {
+                '&:hover': {
                   backgroundColor: `${item.color}.light`,
                   color: `${item.color}.dark`,
                 },
@@ -136,11 +139,11 @@ function SidebarNavigation() {
               <ListItemText
                 primary={item.text}
                 sx={{
-                  "& .MuiListItemText-primary": {
-                    fontWeight: "bold",
+                  '& .MuiListItemText-primary': {
+                    fontWeight: 'bold',
                     fontSize: getResponsiveValue(
                       responsiveStyles.fontSize.normal,
-                      isMobile,
+                      isMobile
                     ),
                   },
                 }}
@@ -163,11 +166,11 @@ function SidebarNavigation() {
           keepMounted: true, // Better open performance on mobile.
         }}
         sx={{
-          display: { xs: "block" },
-          "& .MuiDrawer-paper": {
-            boxSizing: "border-box",
+          display: { xs: 'block' },
+          '& .MuiDrawer-paper': {
+            boxSizing: 'border-box',
             width: drawerWidth,
-            backgroundColor: "background.paper",
+            backgroundColor: 'background.paper',
           },
         }}
       >

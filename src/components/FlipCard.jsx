@@ -1,8 +1,10 @@
-import { useState, useRef } from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
-import { useResponsive } from "../hooks/useResponsive";
+import { useRef, useState } from 'react';
 
-function FlipCard({ front, back, height = 200, width = "100%" }) {
+import { Box, Card, CardContent, Typography } from '@mui/material';
+
+import { useResponsive } from '../hooks/useResponsive';
+
+function FlipCard({ front, back, height = 200, width = '100%' }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const { isMobile } = useResponsive();
   const cardRef = useRef(null);
@@ -15,9 +17,9 @@ function FlipCard({ front, back, height = 200, width = "100%" }) {
     if (isMobile && newFlippedState && cardRef.current) {
       setTimeout(() => {
         cardRef.current.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-          inline: "center",
+          behavior: 'smooth',
+          block: 'center',
+          inline: 'center',
         });
       }, 150); // Small delay to allow height transition to start
     }
@@ -26,7 +28,7 @@ function FlipCard({ front, back, height = 200, width = "100%" }) {
   // Calculate dynamic height for mobile
   const getDynamicHeight = () => {
     if (isMobile) {
-      return isFlipped ? "25vh" : height;
+      return isFlipped ? '25vh' : height;
     }
     return height;
   };
@@ -35,27 +37,27 @@ function FlipCard({ front, back, height = 200, width = "100%" }) {
     <Box
       ref={cardRef}
       sx={{
-        width: "100%",
+        width: '100%',
         height: getDynamicHeight(),
-        cursor: "pointer",
-        display: "flex",
-        justifyContent: "center",
-        transition: "height 0.3s ease",
+        cursor: 'pointer',
+        display: 'flex',
+        justifyContent: 'center',
+        transition: 'height 0.3s ease',
       }}
       onClick={handleClick}
     >
       <Card
         sx={{
           width: width,
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: isFlipped ? "secondary.main" : "primary.main",
-          color: "white",
-          transition: "all 0.3s ease",
-          "&:hover": {
-            backgroundColor: isFlipped ? "secondary.dark" : "primary.dark",
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: isFlipped ? 'secondary.main' : 'primary.main',
+          color: 'white',
+          transition: 'all 0.3s ease',
+          '&:hover': {
+            backgroundColor: isFlipped ? 'secondary.dark' : 'primary.dark',
           },
           // Force fixed dimensions
           minWidth: width,
@@ -66,12 +68,12 @@ function FlipCard({ front, back, height = 200, width = "100%" }) {
       >
         <CardContent
           sx={{
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
             p: 2,
           }}
         >

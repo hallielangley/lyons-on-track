@@ -1,5 +1,6 @@
-import { useRouteError } from "react-router-dom";
-import { Box, Typography, Button, Container } from "@mui/material";
+import { useRouteError } from 'react-router-dom';
+
+import { Box, Button, Container, Typography } from '@mui/material';
 
 function ErrorBoundary() {
   const error = useRouteError();
@@ -21,12 +22,12 @@ function ErrorBoundary() {
           Sorry, an unexpected error has occurred.
         </Typography>
         <Typography variant="body1" color="text.secondary" paragraph>
-          {error?.statusText || error?.message || "Something went wrong"}
+          {error?.statusText || error?.message || 'Something went wrong'}
         </Typography>
         <Button
           variant="contained"
           color="primary"
-          onClick={() => (window.location.href = "/")}
+          onClick={() => (window.location.href = '/')}
         >
           Go Home
         </Button>

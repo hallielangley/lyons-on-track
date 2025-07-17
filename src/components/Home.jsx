@@ -1,35 +1,30 @@
 import {
-  Typography,
+  Box,
   Card,
   CardContent,
-  Box,
+  Chip,
   Container,
-  Paper,
   List,
   ListItem,
   ListItemText,
-  Chip,
-} from "@mui/material";
-import { useResponsive } from "../hooks/useResponsive";
+  Paper,
+  Typography,
+} from '@mui/material';
+
+import { useResponsive } from '../hooks/useResponsive';
 import {
-  responsiveStyles,
   getResponsiveValue,
-} from "../utils/responsiveStyles";
-import HomeNavigation from "./HomeNavigation";
-import ConcernsAndSolutions from "./ConcernsAndSolutions";
+  responsiveStyles,
+} from '../utils/responsiveStyles';
+import ConcernsAndSolutions from './ConcernsAndSolutions';
+import HomeNavigation from './HomeNavigation';
 
 function Home() {
-  const {
-    isMobile,
-    getTypographyVariant,
-    getSpacing,
-    getFontSize,
-    getPadding,
-    getContainerPadding,
-  } = useResponsive();
+  const { isMobile, getTypographyVariant, getSpacing, getContainerPadding } =
+    useResponsive();
 
   return (
-    <Container maxWidth="lg" sx={{ px: getContainerPadding() }}>
+    <Container sx={{ px: getContainerPadding() }}>
       {/* Navigation Buttons */}
       <HomeNavigation />
 
@@ -41,7 +36,7 @@ function Home() {
           }}
         >
           <Typography
-            variant={getTypographyVariant("h5", "h4")}
+            variant={getTypographyVariant('h5', 'h4')}
             component="h2"
             gutterBottom
           >
@@ -53,7 +48,7 @@ function Home() {
             sx={{
               fontSize: getResponsiveValue(
                 responsiveStyles.fontSize.normal,
-                isMobile,
+                isMobile
               ),
             }}
           >

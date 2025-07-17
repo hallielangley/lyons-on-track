@@ -1,29 +1,12 @@
-import {
-  Typography,
-  Card,
-  CardContent,
-  Box,
-  Grid,
-  Container,
-  Paper,
-  List,
-  ListItem,
-  ListItemText,
-  useTheme,
-  useMediaQuery,
-  colors
-} from "@mui/material";
+import { Box, Grid, Paper, Typography } from '@mui/material';
 
-import ElectionDayInfo from "./ElectionDayInfo";
-import boroughHallImage from "../assets/borough-hall.jpg";
-import { useResponsive } from "../hooks/useResponsive";
-import CandidateItem from "./CandidateItem";
-import { candidates, writeInCandidates } from "../data/candidates";
+import boroughHallImage from '../assets/borough-hall.jpg';
+import { candidates, writeInCandidates } from '../data/candidates';
+import { useResponsive } from '../hooks/useResponsive';
+import CandidateItem from './CandidateItem';
 
 function HowToVote() {
-  const theme = useTheme();
-  const { isMobile, getTypographyVariant, getSpacing, getPadding } =
-    useResponsive();
+  const { getTypographyVariant, getPadding } = useResponsive();
 
   return (
     <Grid
@@ -37,23 +20,22 @@ function HowToVote() {
         item
         size={{ xs: 12, md: 4 }}
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         <Paper
           sx={{
-            backgroundColor: theme.palette.primary.light,
             p: getPadding(2, 3),
-            height: "100%",
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
           }}
         >
           <Box
@@ -61,10 +43,10 @@ function HowToVote() {
             src={boroughHallImage}
             alt="Lyons Borough Hall"
             sx={{
-              width: "100%",
+              width: '100%',
               maxWidth: 400,
-              height: "auto",
-              objectFit: "contain",
+              height: 'auto',
+              objectFit: 'contain',
               borderRadius: 2,
               boxShadow: 2,
             }}
@@ -72,37 +54,37 @@ function HowToVote() {
           <Box
             sx={{
               py: getPadding(2, 3),
-              display: "flex",
-              flexDirection: "row",
-              width: "100%",
-              justifyContent: { xs: "space-around", md: "space-between" },
+              display: 'flex',
+              flexDirection: 'row',
+              width: '100%',
+              justifyContent: { xs: 'space-around', md: 'space-between' },
             }}
           >
             <Box
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
               }}
             >
               <Typography
-                variant={getTypographyVariant("body1", "h6")}
-                sx={{ fontWeight: "bold" }}
+                variant={getTypographyVariant('body1', 'h6')}
+                sx={{ fontWeight: 'bold' }}
               >
                 NOVEMBER 4
               </Typography>
               <Typography
-                variant={getTypographyVariant("body1", "h6")}
-                sx={{ fontWeight: "bold" }}
+                variant={getTypographyVariant('body1', 'h6')}
+                sx={{ fontWeight: 'bold' }}
               >
                 7AM - 8PM
               </Typography>
             </Box>
             <Box
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
               }}
             >
               <Typography variant="body2">Lyons Borough Hall</Typography>
@@ -113,7 +95,7 @@ function HowToVote() {
           <Typography
             variant="body2"
             fontStyle="italic"
-            sx={{ fontSize: "0.8rem" }}
+            sx={{ fontSize: '0.8rem' }}
           >
             If you are in line by 8PM, you can vote!
           </Typography>
@@ -124,29 +106,29 @@ function HowToVote() {
         item
         size={{ xs: 12, md: 4 }}
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
         }}
       >
         <Paper
           sx={{
             p: getPadding(2, 3),
-            height: "100%",
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
           }}
         >
           <Typography
-            variant={getTypographyVariant("h5", "h4")}
+            variant={getTypographyVariant('h5', 'h4')}
             component="h2"
-            sx={{ fontWeight: "bold" }}
+            sx={{ fontWeight: 'bold' }}
           >
             VOTE
           </Typography>
@@ -165,30 +147,29 @@ function HowToVote() {
         item
         size={{ xs: 12, md: 4 }}
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
         }}
       >
         <Paper
-
           sx={{
             p: getPadding(2, 3),
-            height: "100%",
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
           }}
         >
           <Typography
-            variant={getTypographyVariant("h5", "h4")}
+            variant={getTypographyVariant('h5', 'h4')}
             component="h2"
-            sx={{ fontWeight: "bold" }}
+            sx={{ fontWeight: 'bold' }}
           >
             WRITE IN
           </Typography>

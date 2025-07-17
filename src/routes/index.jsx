@@ -1,17 +1,18 @@
-import { createBrowserRouter } from "react-router-dom";
-import Layout from "../components/Layout";
-import Home from "../components/Home";
-import About from "../components/About";
-import Contact from "../components/Contact";
-import HowToVote from "../components/HowToVote";
-import ConcernsAndSolutions from "../components/ConcernsAndSolutions";
-import ErrorBoundary from "../components/ErrorBoundary";
-import ScrollableSectionTest from "../components/ScrollableSectionTest";
+import { createBrowserRouter } from 'react-router-dom';
+
+import About from '../components/About';
+import ConcernsAndSolutions from '../components/ConcernsAndSolutions';
+import Contact from '../components/Contact';
+import ErrorBoundary from '../components/ErrorBoundary';
+import Home from '../components/Home';
+import HowToVote from '../components/HowToVote';
+import Layout from '../components/Layout';
+import ScrollableSectionTest from '../components/ScrollableSectionTest';
 
 export const router = createBrowserRouter(
   [
     {
-      path: "/",
+      path: '/',
       element: <Layout />,
       errorElement: <ErrorBoundary />,
       children: [
@@ -20,25 +21,25 @@ export const router = createBrowserRouter(
           element: <Home />,
         },
         {
-          path: "about",
+          path: 'about',
           element: <About />,
         },
         {
-          path: "contact",
+          path: 'contact',
           element: <Contact />,
         },
         {
-          path: "how-to-vote",
+          path: 'how-to-vote',
           element: <HowToVote />,
         },
         {
-          path: "solutions",
+          path: 'solutions',
           element: <ConcernsAndSolutions />,
         },
       ],
     },
   ],
   {
-    basename: "/lyons-on-track/",
-  },
+    basename: '/lyons-on-track/',
+  }
 );

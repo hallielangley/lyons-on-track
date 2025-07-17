@@ -1,13 +1,13 @@
-import { useTheme, useMediaQuery } from "@mui/material";
+import { useMediaQuery, useTheme } from '@mui/material';
 
 export const useResponsive = () => {
   const theme = useTheme();
 
   // Breakpoint queries
-  const isMobile = useMediaQuery(theme.breakpoints.down("md")); // < 900px
-  const isTablet = useMediaQuery(theme.breakpoints.between("md", "lg")); // 900px - 1200px
-  const isDesktop = useMediaQuery(theme.breakpoints.up("lg")); // >= 1200px
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // < 600px
+  const isMobile = useMediaQuery(theme.breakpoints.down('md')); // < 900px
+  const isTablet = useMediaQuery(theme.breakpoints.between('md', 'lg')); // 900px - 1200px
+  const isDesktop = useMediaQuery(theme.breakpoints.up('lg')); // >= 1200px
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // < 600px
 
   // Responsive typography variants
   const getTypographyVariant = (mobileVariant, desktopVariant) => {
@@ -56,7 +56,7 @@ export const useResponsive = () => {
 
   // Responsive button size
   const getButtonSize = () => {
-    return isMobile ? "small" : "medium";
+    return isMobile ? 'small' : 'medium';
   };
 
   // Responsive navigation text

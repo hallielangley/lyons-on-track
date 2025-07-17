@@ -1,25 +1,26 @@
-import { Typography, Card, CardContent, Box, Avatar } from "@mui/material";
-import { useResponsive } from "../hooks/useResponsive";
+import { Avatar, Box, Card, CardContent, Typography } from '@mui/material';
+
+import { useResponsive } from '../hooks/useResponsive';
 import {
-  responsiveStyles,
   getResponsiveValue,
-} from "../utils/responsiveStyles";
+  responsiveStyles,
+} from '../utils/responsiveStyles';
 
 function CandidateCard({ candidate }) {
   const { isMobile, getTypographyVariant, getAvatarSize } = useResponsive();
 
   return (
-    <Card sx={{ height: "100%" }}>
+    <Card sx={{ height: '100%' }}>
       <CardContent
         sx={{ p: getResponsiveValue(responsiveStyles.padding.card, isMobile) }}
       >
         <Box
           sx={{
-            display: "flex",
-            alignItems: "center",
+            display: 'flex',
+            alignItems: 'center',
             mb: 2,
-            flexDirection: isMobile ? "column" : "row",
-            textAlign: isMobile ? "center" : "left",
+            flexDirection: isMobile ? 'column' : 'row',
+            textAlign: isMobile ? 'center' : 'left',
           }}
         >
           <Avatar
@@ -32,7 +33,7 @@ function CandidateCard({ candidate }) {
           >
             {candidate.initials}
           </Avatar>
-          <Typography variant={getTypographyVariant("h6", "h5")} component="h2">
+          <Typography variant={getTypographyVariant('h6', 'h5')} component="h2">
             {candidate.name} - {candidate.position}
           </Typography>
         </Box>
@@ -45,7 +46,7 @@ function CandidateCard({ candidate }) {
               mb: 2,
               fontSize: getResponsiveValue(
                 responsiveStyles.fontSize.small,
-                isMobile,
+                isMobile
               ),
             }}
           >
@@ -61,7 +62,7 @@ function CandidateCard({ candidate }) {
             sx={{
               fontSize: getResponsiveValue(
                 responsiveStyles.fontSize.normal,
-                isMobile,
+                isMobile
               ),
             }}
           >
