@@ -6,7 +6,7 @@ function HowToVote() {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
-    <Container maxWidth="lg" sx={{ px: isMobile ? 2 : 3 }}>
+    <Container sx={{ height: '100%', px: isMobile ? 2 : 3 }}>
       <ElectionDayInfo />
     </Container>
   )

@@ -7,7 +7,7 @@ function Navigation() {
   const { isMobile } = useResponsive()
 
   return (
-    <AppBar position="static" sx={{ mb: 3 }}>
+    <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
       <Toolbar sx={{ justifyContent: 'center' }}>
         <Typography 
           component={Link}
@@ -20,9 +20,6 @@ function Navigation() {
             fontWeight: 'bold',
             textAlign: 'center',
             cursor: 'pointer',
-            '&:hover': {
-              textDecoration: 'underline'
-            }
           }}
         >
           No Agenda. Here to Listen.

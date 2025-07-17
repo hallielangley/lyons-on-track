@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'about',
-        element: <ScrollableSectionTest />,
+        element: <About />,
       },
       {
         path: 'contact',

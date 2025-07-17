@@ -7,10 +7,10 @@ function ConcernsAndSolutions() {
     const { isMobile, getTypographyVariant, getSpacing } = useResponsive()
 
     return (
-        <Container maxWidth="lg" sx={{ 
+        <Container sx={{ 
             px: isMobile ? 2 : 3, 
             textAlign: 'center',
-            height: isMobile ? 'calc(100vh - 100px)' : 'calc(100vh - 120px)',
+            height: '100%',
             display: 'flex',
             flexDirection: 'column'
         }}>

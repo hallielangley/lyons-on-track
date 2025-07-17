@@ -15,7 +15,7 @@ function ScrollableSectionTest() {
         <Container maxWidth="lg" sx={{ 
             px: isMobile ? 2 : 3, 
             textAlign: 'center',
-            height: isMobile ? 'calc(100vh - 120px)' : 'calc(100vh - 140px)',
+            height: '100%',
             display: 'flex',
             flexDirection: 'column'
         }}>
