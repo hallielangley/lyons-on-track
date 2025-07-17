@@ -3,7 +3,7 @@ import { useResponsive } from '../hooks/useResponsive'
 import { responsiveStyles, getResponsiveValue } from '../utils/responsiveStyles'
 import CandidateItem from './CandidateItem'
 import { candidates, writeInCandidates } from '../data/candidates'
-import boroughHallImage from '../assets/Lyons Borough Office.jpg'
+import boroughHallImage from '../assets/borough-hall.jpg'
 
 
 
@@ -17,9 +17,7 @@ function ElectionDayInfo() {
                 textAlign: 'center'
             }}>
                 <Box display='flex' flexDirection='row' justifyContent='center' gap={2} width='100%' >
-                    <Typography>test</Typography>
 
-                    <Typography>test</Typography>
                 </Box>
                 <Paper>
 

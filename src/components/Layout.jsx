@@ -11,7 +11,7 @@ function Layout() {
       height: '100vh',
       overflow: 'hidden'
     }}>
-      <Navigation />
+      {/* <Navigation /> */}
       <SidebarNavigation />
       <main style={{ 
         flex: 1, 

@@ -10,10 +10,12 @@ import {
     Box,
     Typography,
     Divider,
-    Toolbar
+    Toolbar,
+    AppBar
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
+import HowToVoteIcon from '@mui/icons-material/HowToVote';
 import { useResponsive } from '../hooks/useResponsive'
 import { responsiveStyles, getResponsiveValue } from '../utils/responsiveStyles'
 
@@ -39,9 +41,41 @@ function SidebarNavigation() {
 
     const drawerWidth = 280
 
+    // App bar/header with MenuIcon, only when Drawer is closed
+    const appBarHeader = (
+        <AppBar>
+            <Toolbar sx={{ justifyContent: 'space-between' }}>
+                <IconButton onClick={handleDrawerToggle} color="inherit">
+                    <MenuIcon />
+                </IconButton>
+                <Typography
+                    component={Link}
+                    to="/"
+                    variant="h6"
+                    sx={{
+                        color: 'white',
+                        textDecoration: 'none',
+                        fontSize: getResponsiveValue(responsiveStyles.fontSize.large, isMobile),
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        cursor: 'pointer',
+                    }}
+                >
+                    No Agenda. Here to Listen.
+                </Typography>
+                <IconButton
+                    component={Link}
+                    to="/how-to-vote"
+                    color="inherit"
+                >
+                    <HowToVoteIcon />
+                </IconButton>
+            </Toolbar>
+        </AppBar>
+    )
+
     const drawer = (
         <Box sx={{ width: drawerWidth }}>
-            <Toolbar />
             <Box sx={{
                 p: 2,
                 display: 'flex',
@@ -49,7 +83,9 @@ function SidebarNavigation() {
                 alignItems: 'center',
                 borderBottom: '1px solid rgba(0, 0, 0, 0.12)'
             }}>
-                <IconButton />
+                <IconButton onClick={handleDrawerToggle} color="inherit">
+                    <CloseIcon />
+                </IconButton>
                 <Typography
                     variant="h6"
                     sx={{
@@ -59,9 +95,7 @@ function SidebarNavigation() {
                 >
                     Navigation
                 </Typography>
-                <IconButton onClick={handleDrawerToggle}>
-                    <CloseIcon />
-                </IconButton>
+                <Box sx={{ width: 40 }} />
             </Box>
             <List sx={{ pt: 1 }}>
                 {navItems.map((item) => (
@@ -106,26 +140,7 @@ function SidebarNavigation() {
 
     return (
         <>
-            <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{
-                    mr: 2,
-                    position: 'fixed',
-                    top: 16,
-                    left: 16,
-                    zIndex: (theme) => theme.zIndex.drawer + 2,
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    '&:hover': {
-                        backgroundColor: 'rgba(255, 255, 255, 1)',
-                    }
-                }}
-            >
-                <MenuIcon />
-            </IconButton>
-
+            {!open && appBarHeader}
             <Drawer
                 variant="temporary"
                 open={open}

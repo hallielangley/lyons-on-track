@@ -50,7 +50,7 @@ function About() {
   ]
 
   return (
-    <Container maxWidth="lg" sx={{ px: getContainerPadding() }}>
+    <Container sx={{ px: getContainerPadding() }}>
       <Typography 
         variant={getTypographyVariant('h4', 'h3')}
         component="h1" 
