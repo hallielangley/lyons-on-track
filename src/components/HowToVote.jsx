@@ -11,7 +11,9 @@ import {
   ListItemText,
   useTheme,
   useMediaQuery,
+  colors
 } from "@mui/material";
+
 import ElectionDayInfo from "./ElectionDayInfo";
 import boroughHallImage from "../assets/borough-hall.jpg";
 import { useResponsive } from "../hooks/useResponsive";
@@ -43,7 +45,9 @@ function HowToVote() {
       >
         <Paper
           sx={{
+            backgroundColor: theme.palette.primary.light,
             p: getPadding(2, 3),
+            height: "100%",
             width: "100%",
             display: "flex",
             flexDirection: "column",
@@ -129,7 +133,8 @@ function HowToVote() {
       >
         <Paper
           sx={{
-            p: 3,
+            p: getPadding(2, 3),
+            height: "100%",
             width: "100%",
             display: "flex",
             flexDirection: "column",
@@ -168,8 +173,10 @@ function HowToVote() {
         }}
       >
         <Paper
+
           sx={{
-            p: 3,
+            p: getPadding(2, 3),
+            height: "100%",
             width: "100%",
             display: "flex",
             flexDirection: "column",
