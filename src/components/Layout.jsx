@@ -2,7 +2,6 @@ import { Outlet } from 'react-router-dom';
 
 import { Box } from '@mui/material';
 
-import Navigation from './Navigation';
 import SidebarNavigation from './SidebarNavigation';
 
 function Layout() {
@@ -15,7 +14,6 @@ function Layout() {
         overflow: 'hidden',
       }}
     >
-      {/* <Navigation /> */}
       <SidebarNavigation />
       <main
         style={{

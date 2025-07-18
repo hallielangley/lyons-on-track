@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-import { Box, Card, CardContent, Typography } from '@mui/material';
+import { Box, Card, CardContent } from '@mui/material';
 
 import { useResponsive } from '../hooks/useResponsive';
 

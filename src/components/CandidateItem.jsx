@@ -1,30 +1,18 @@
 import { Box, Typography } from '@mui/material';
 
-import { useResponsive } from '../hooks/useResponsive';
-import {
-  getResponsiveValue,
-  responsiveStyles,
-} from '../utils/responsiveStyles';
-
-function CandidateItem({ name, position, variant = 'h6' }) {
-  const { isMobile, getTypographyVariant } = useResponsive();
-
+function CandidateItem({ name, position }) {
   return (
     <Box sx={{ mb: 0.5 }}>
       <Typography
-        variant={getTypographyVariant(variant, variant === 'h6' ? 'h5' : 'h6')}
+        variant='h4'
       >
         {name}
       </Typography>
       <Typography
-        variant="body2"
+        variant="h5"
         sx={{
           fontStyle: 'italic',
           mb: 0.5,
-          fontSize: getResponsiveValue(
-            responsiveStyles.fontSize.small,
-            isMobile
-          ),
         }}
       >
         {position}

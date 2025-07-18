@@ -2,43 +2,41 @@ import { Box, Container, Typography } from '@mui/material';
 
 import { concernsAndSolutions } from '../data/concernsAndSolutions';
 import { useResponsive } from '../hooks/useResponsive';
-import FlipCard from './FlipCard';
+import FlipCard from '../components/FlipCard';
 
-function ConcernsAndSolutions() {
+function OurSolutions() {
   const { isMobile, getTypographyVariant, getSpacing } = useResponsive();
 
   return (
     <Container
       sx={{
-        px: isMobile ? 2 : 3,
         textAlign: 'center',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
       }}
     >
-      {/* Fixed Header Section */}
       <Box sx={{ flexShrink: 0 }}>
         <Typography
-          variant="h1"
+          variant="h2"
+          component="h1"
           sx={{
-            fontSize: isMobile ? '1.3rem' : '1.8rem',
             fontWeight: 'bold',
             mb: 1,
           }}
         >
-          Your Concerns, Our Solutions
+          Your Concerns,{isMobile ? <br /> : ' '}Our Solutions
         </Typography>
 
-        <Typography sx={{ mb: 1, fontSize: isMobile ? '0.8rem' : '0.9rem' }}>
+        <Typography sx={{ mb: 1 }}>
           After listening to Lyons residents, we've identified the top
           priorities and developed practical solutions for each.
         </Typography>
 
         <Typography
+          variant="body2"
           sx={{
             mb: 1,
-            fontSize: isMobile ? '0.7rem' : '0.8rem',
             fontStyle: 'italic',
           }}
         >
@@ -160,4 +158,4 @@ function ConcernsAndSolutions() {
   );
 }
 
-export default ConcernsAndSolutions;
+export default OurSolutions;

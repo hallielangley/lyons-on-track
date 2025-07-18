@@ -7,7 +7,7 @@ import {
 } from '../utils/responsiveStyles';
 
 function CandidateCard({ candidate }) {
-  const { isMobile, getTypographyVariant, getAvatarSize } = useResponsive();
+  const { isMobile, getAvatarSize } = useResponsive();
 
   return (
     <Card sx={{ height: '100%' }}>
@@ -33,9 +33,15 @@ function CandidateCard({ candidate }) {
           >
             {candidate.initials}
           </Avatar>
-          <Typography variant={getTypographyVariant('h6', 'h5')} component="h2">
-            {candidate.name} - {candidate.position}
-          </Typography>
+          <Box>
+
+            <Typography variant="h4" component="h2">
+              {candidate.name}
+            </Typography>
+            <Typography variant="h5" component="h3">
+              {candidate.position}
+            </Typography>
+          </Box>
         </Box>
 
         {candidate.imageNote && (

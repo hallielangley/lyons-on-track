@@ -1,18 +1,18 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import About from '../components/About';
-import ConcernsAndSolutions from '../components/ConcernsAndSolutions';
-import Contact from '../components/Contact';
+import ContactUs from '../containers/Contact';
 import ErrorBoundary from '../components/ErrorBoundary';
-import Home from '../components/Home';
-import HowToVote from '../components/HowToVote';
+import Home from '../containers/Home';
+import HowToVote from '../containers/HowToVote';
 import Layout from '../components/Layout';
-import ScrollableSectionTest from '../components/ScrollableSectionTest';
+import OurCandidates from '../containers/OurCandidates';
+import OurSolutions from '../containers/OurSolutions';
+import { PATHS, ROUTER_BASENAME } from './paths';
 
 export const router = createBrowserRouter(
   [
     {
-      path: '/',
+      path: PATHS.HOME,
       element: <Layout />,
       errorElement: <ErrorBoundary />,
       children: [
@@ -21,25 +21,25 @@ export const router = createBrowserRouter(
           element: <Home />,
         },
         {
-          path: 'about',
-          element: <About />,
+          path: PATHS.CANDIDATES,
+          element: <OurCandidates />,
         },
         {
-          path: 'contact',
-          element: <Contact />,
+          path: PATHS.CONTACT,
+          element: <ContactUs />,
         },
         {
-          path: 'how-to-vote',
+          path: PATHS.HOW_TO_VOTE,
           element: <HowToVote />,
         },
         {
-          path: 'solutions',
-          element: <ConcernsAndSolutions />,
+          path: PATHS.SOLUTIONS,
+          element: <OurSolutions />,
         },
       ],
     },
   ],
   {
-    basename: '/lyons-on-track/',
+    basename: ROUTER_BASENAME,
   }
 );

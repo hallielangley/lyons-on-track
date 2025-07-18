@@ -8,7 +8,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
   Box,
-  Divider,
   Drawer,
   IconButton,
   List,
@@ -24,22 +23,14 @@ import {
   getResponsiveValue,
   responsiveStyles,
 } from '../utils/responsiveStyles';
+import { NAV_ITEMS, PATHS } from '../routes/paths';
 
 function SidebarNavigation() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const { isMobile, getNavText } = useResponsive();
 
-  const navItems = [
-    {
-      path: '/how-to-vote',
-      text: getNavText('Vote', 'How to Vote'),
-      color: 'secondary',
-    },
-    { path: '/solutions', text: 'Solutions', color: 'success' },
-    { path: '/about', text: 'About Our Candidates', color: 'info' },
-    { path: '/contact', text: 'Contact Us', color: 'warning' },
-  ];
+  const navItems = NAV_ITEMS;
 
   const handleDrawerToggle = () => {
     setOpen(!open);
@@ -60,7 +51,7 @@ function SidebarNavigation() {
         </IconButton>
         <Typography
           component={Link}
-          to="/"
+          to={PATHS.HOME}
           variant="h6"
           sx={{
             color: 'white',
@@ -76,7 +67,7 @@ function SidebarNavigation() {
         >
           No Agenda. Here to Listen.
         </Typography>
-        <IconButton component={Link} to="/how-to-vote" color="inherit">
+        <IconButton component={Link} to={PATHS.HOW_TO_VOTE} color="inherit">
           <HowToVoteIcon />
         </IconButton>
       </Toolbar>
@@ -124,15 +115,16 @@ function SidebarNavigation() {
                 borderRadius: 1,
                 mb: 0.5,
                 '&.Mui-selected': {
-                  backgroundColor: `${item.color}.main`,
+                  backgroundColor: 'primary.main',
                   color: 'white',
+                  fontWeight: 'bold',
                   '&:hover': {
-                    backgroundColor: `${item.color}.dark`,
+                    backgroundColor: 'primary.dark',
                   },
                 },
                 '&:hover': {
-                  backgroundColor: `${item.color}.light`,
-                  color: `${item.color}.dark`,
+                  backgroundColor: 'primary.light',
+                  color: 'primary.dark',
                 },
               }}
             >

@@ -1,8 +1,6 @@
 import { Email } from '@mui/icons-material';
 import {
   Box,
-  Card,
-  CardContent,
   Container,
   Link,
   Paper,
@@ -51,7 +49,6 @@ function Contact() {
 
           <Typography
             variant="body1"
-            paragraph
             sx={{ fontSize: isMobile ? '0.9rem' : '1rem' }}
           >
             Reach out to us at:
@@ -74,34 +71,7 @@ function Contact() {
         </Box>
       </Paper>
 
-      <Card sx={{ mt: isMobile ? 3 : 4 }}>
-        <CardContent sx={{ p: isMobile ? 2 : 3 }}>
-          <Typography
-            variant={isMobile ? 'h6' : 'h6'}
-            component="h3"
-            gutterBottom
-          >
-            Campaign Information
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            sx={{ fontSize: isMobile ? '0.9rem' : '1rem' }}
-          >
-            We are committed to transparency and open communication with the
-            residents of Lyons. Your feedback and concerns are important to us
-            as we work together to improve our community.
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{ fontSize: isMobile ? '0.9rem' : '1rem' }}
-          >
-            Please don't hesitate to reach out with any questions about our
-            platform, the election process, or how you can get involved in
-            making Lyons a better place to live.
-          </Typography>
-        </CardContent>
-      </Card>
+
     </Container>
   );
 }

@@ -1,9 +1,9 @@
 import { Box, Grid, Paper, Typography } from '@mui/material';
 
 import boroughHallImage from '../assets/borough-hall.jpg';
+import CandidateItem from '../components/CandidateItem';
 import { candidates, writeInCandidates } from '../data/candidates';
 import { useResponsive } from '../hooks/useResponsive';
-import CandidateItem from './CandidateItem';
 
 function HowToVote() {
   const { getTypographyVariant, getPadding } = useResponsive();
@@ -13,11 +13,9 @@ function HowToVote() {
       container
       height="100%"
       padding={{ xs: 2, md: 3 }}
-      spacing={{ xs: 2, md: 3 }}
-      columns={{ xs: 4, sm: 8, md: 12 }}
+      spacing={{ xs: 1, md: 2 }}
     >
       <Grid
-        item
         size={{ xs: 12, md: 4 }}
         sx={{
           display: 'flex',
@@ -53,7 +51,7 @@ function HowToVote() {
           />
           <Box
             sx={{
-              py: getPadding(2, 3),
+              py: getPadding(1, 2),
               display: 'flex',
               flexDirection: 'row',
               width: '100%',
@@ -68,14 +66,14 @@ function HowToVote() {
               }}
             >
               <Typography
-                variant={getTypographyVariant('body1', 'h6')}
-                sx={{ fontWeight: 'bold' }}
+                variant="h6"
+                sx={{ fontWeight: 'bold', lineHeight: 1 }}
               >
                 NOVEMBER 4
               </Typography>
               <Typography
-                variant={getTypographyVariant('body1', 'h6')}
-                sx={{ fontWeight: 'bold' }}
+                variant="h6"
+                sx={{ fontWeight: 'bold', lineHeight: 1 }}
               >
                 7AM - 8PM
               </Typography>
@@ -87,23 +85,18 @@ function HowToVote() {
                 justifyContent: 'center',
               }}
             >
-              <Typography variant="body2">Lyons Borough Hall</Typography>
-              <Typography variant="body2">316 Kemp St</Typography>
+              <Typography sx={{ lineHeight: 1 }}>Lyons Borough Hall</Typography>
+              <Typography sx={{ lineHeight: 1 }}>316 Kemp St</Typography>
             </Box>
           </Box>
 
-          <Typography
-            variant="body2"
-            fontStyle="italic"
-            sx={{ fontSize: '0.8rem' }}
-          >
+          <Typography variant="body2" fontStyle="italic">
             If you are in line by 8PM, you can vote!
           </Typography>
         </Paper>
       </Grid>
 
       <Grid
-        item
         size={{ xs: 12, md: 4 }}
         sx={{
           display: 'flex',
@@ -144,7 +137,6 @@ function HowToVote() {
       </Grid>
 
       <Grid
-        item
         size={{ xs: 12, md: 4 }}
         sx={{
           display: 'flex',

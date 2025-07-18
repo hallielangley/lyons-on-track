@@ -1,6 +1,7 @@
 import { useRouteError } from 'react-router-dom';
 
 import { Box, Button, Container, Typography } from '@mui/material';
+import { PATHS } from '../routes/paths';
 
 function ErrorBoundary() {
   const error = useRouteError();
@@ -27,7 +28,7 @@ function ErrorBoundary() {
         <Button
           variant="contained"
           color="primary"
-          onClick={() => (window.location.href = '/')}
+          onClick={() => (window.location.href = PATHS.HOME)}
         >
           Go Home
         </Button>

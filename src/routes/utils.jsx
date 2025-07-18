@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+import { PATHS, ROUTE_METADATA } from './paths';
 
 // Custom hook for navigation with additional features
 export const useAppNavigation = () => {
@@ -14,7 +15,7 @@ export const useAppNavigation = () => {
   };
 
   const goHome = () => {
-    navigate('/');
+    navigate(PATHS.HOME);
   };
 
   const isActiveRoute = (path) => {
@@ -30,25 +31,6 @@ export const useAppNavigation = () => {
   };
 };
 
-// Route constants for better maintainability
-export const ROUTES = {
-  HOME: '/',
-  ABOUT: '/about',
-  CONTACT: '/contact',
-};
-
-// Route metadata for additional information
-export const ROUTE_METADATA = {
-  [ROUTES.HOME]: {
-    title: 'Home',
-    description: 'Welcome to Lyons on Track',
-  },
-  [ROUTES.ABOUT]: {
-    title: 'About',
-    description: 'Learn more about us',
-  },
-  [ROUTES.CONTACT]: {
-    title: 'Contact',
-    description: 'Get in touch with us',
-  },
-};
+// Re-export constants for backward compatibility
+export const ROUTES = PATHS;
+export { ROUTE_METADATA };

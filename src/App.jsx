@@ -1,11 +1,11 @@
 import { RouterProvider } from 'react-router-dom';
 
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { CssBaseline, ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
 
 import './App.css';
 import { router } from './routes';
 
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     primary: {
       main: '#6e2dce',
@@ -27,6 +27,8 @@ const theme = createTheme({
     },
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 function App() {
   return (
