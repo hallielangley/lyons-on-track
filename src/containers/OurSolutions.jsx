@@ -1,8 +1,8 @@
 import { Box, Container, Typography } from '@mui/material';
 
+import FlipCard from '../components/FlipCard';
 import { concernsAndSolutions } from '../data/concernsAndSolutions';
 import { useResponsive } from '../hooks/useResponsive';
-import FlipCard from '../components/FlipCard';
 
 function OurSolutions() {
   const { isMobile, getTypographyVariant, getSpacing } = useResponsive();
@@ -53,7 +53,6 @@ function OurSolutions() {
           flexDirection: 'column',
           alignItems: 'center',
           gap: isMobile ? 1 : 3,
-          py: 1,
         }}
       >
         {/* First row - 3 cards */}
@@ -72,23 +71,18 @@ function OurSolutions() {
               key={index}
               sx={{
                 width: isMobile ? '100%' : '280px',
-                maxWidth: isMobile ? '300px' : '280px',
                 flexShrink: 0,
               }}
             >
               <FlipCard
                 front={
-                  <Typography
-                    variant={getTypographyVariant('h6', 'h5')}
-                    sx={{ color: 'white', textAlign: 'center' }}
-                  >
+                  <Typography variant="h5" >
                     {item.concern}
                   </Typography>
                 }
                 back={
                   <Typography
-                    variant="body2"
-                    sx={{ color: 'white', textAlign: 'center' }}
+                    variant="body1"
                   >
                     {item.solution}
                   </Typography>
@@ -116,24 +110,19 @@ function OurSolutions() {
               key={index + 3}
               sx={{
                 width: isMobile ? '100%' : '280px',
-                maxWidth: isMobile ? '300px' : '280px',
                 flexShrink: 0,
               }}
             >
               <FlipCard
                 front={
                   <Typography
-                    variant={getTypographyVariant('h6', 'h5')}
-                    sx={{ color: 'white', textAlign: 'center' }}
+                    variant='h5'
                   >
                     {item.concern}
                   </Typography>
                 }
                 back={
-                  <Typography
-                    variant="body2"
-                    sx={{ color: 'white', textAlign: 'center' }}
-                  >
+                  <Typography variant="body2">
                     {item.solution}
                   </Typography>
                 }

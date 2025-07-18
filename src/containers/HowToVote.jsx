@@ -2,11 +2,11 @@ import { Box, Grid, Paper, Typography } from '@mui/material';
 
 import boroughHallImage from '../assets/borough-hall.jpg';
 import CandidateItem from '../components/CandidateItem';
-import { candidates, writeInCandidates } from '../data/candidates';
+import { candidates } from '../data/candidates';
 import { useResponsive } from '../hooks/useResponsive';
 
 function HowToVote() {
-  const { getTypographyVariant, getPadding } = useResponsive();
+  const { getPadding } = useResponsive();
 
   return (
     <Grid
@@ -26,8 +26,8 @@ function HowToVote() {
       >
         <Paper
           sx={{
-            p: getPadding(2, 3),
-            height: '100%',
+            px: getPadding(2, 3),
+            py: getPadding(3, 4),
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
@@ -52,7 +52,7 @@ function HowToVote() {
           <Box
             sx={{
               py: getPadding(1, 2),
-              display: 'flex',
+              display: { xs: 'flex', md: 'block' },
               flexDirection: 'row',
               width: '100%',
               justifyContent: { xs: 'space-around', md: 'space-between' },
@@ -66,13 +66,13 @@ function HowToVote() {
               }}
             >
               <Typography
-                variant="h6"
+                variant="h5"
                 sx={{ fontWeight: 'bold', lineHeight: 1 }}
               >
                 NOVEMBER 4
               </Typography>
               <Typography
-                variant="h6"
+                variant="h5"
                 sx={{ fontWeight: 'bold', lineHeight: 1 }}
               >
                 7AM - 8PM
@@ -97,86 +97,27 @@ function HowToVote() {
       </Grid>
 
       <Grid
-        size={{ xs: 12, md: 4 }}
+        container
+        size={{ xs: 12, md: 8 }}
         sx={{
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
           alignItems: 'center',
           justifyContent: 'center',
-          textAlign: 'center',
         }}
       >
-        <Paper
-          sx={{
-            p: getPadding(2, 3),
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-          }}
-        >
-          <Typography
-            variant={getTypographyVariant('h5', 'h4')}
-            component="h2"
-            sx={{ fontWeight: 'bold' }}
-          >
-            VOTE
-          </Typography>
-          {candidates.map((candidate, index) => (
+        {candidates.map((candidate, index) => (
+          <Grid size={{ xs: 12, md: 6 }} key={index}>
             <CandidateItem
-              key={index}
-              name={candidate.name}
+              firstName={candidate.firstName}
+              lastName={candidate.lastName}
               position={candidate.position}
+              writeIn={candidate.writeIn}
               variant="h6"
             />
-          ))}
-        </Paper>
-      </Grid>
-
-      <Grid
-        size={{ xs: 12, md: 4 }}
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
-        }}
-      >
-        <Paper
-          sx={{
-            p: getPadding(2, 3),
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-          }}
-        >
-          <Typography
-            variant={getTypographyVariant('h5', 'h4')}
-            component="h2"
-            sx={{ fontWeight: 'bold' }}
-          >
-            WRITE IN
-          </Typography>
-          <Typography fontStyle="italic" color="text.secondary" sx={{ mb: 1 }}>
-            Please spell exactly.
-          </Typography>
-          {writeInCandidates.map((candidate, index) => (
-            <CandidateItem
-              key={index}
-              name={candidate.name}
-              position={candidate.position}
-              variant="h6"
-            />
-          ))}
-        </Paper>
+          </Grid>
+        ))}
       </Grid>
     </Grid>
   );

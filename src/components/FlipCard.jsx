@@ -53,11 +53,13 @@ function FlipCard({ front, back, height = 200, width = '100%' }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: isFlipped ? 'secondary.main' : 'primary.main',
-          color: 'white',
+          backgroundColor: isFlipped ? 'primary.light' : 'primary.main',
+          color: isFlipped? 'primary.contrastText': 'white',
           transition: 'all 0.3s ease',
           '&:hover': {
-            backgroundColor: isFlipped ? 'secondary.dark' : 'primary.dark',
+            backgroundColor: 'primary.dark',
+            color: isFlipped? 'primary.contrastText': 'white',
+
           },
           // Force fixed dimensions
           minWidth: width,

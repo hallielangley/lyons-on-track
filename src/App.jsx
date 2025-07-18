@@ -6,24 +6,25 @@ import './App.css';
 import { router } from './routes';
 
 let theme = createTheme({
+  typography: {
+    fontFamily: [
+      'Helvetica',
+      'Arial',
+      'sans-serif'
+    ].join(','),
+  },
   palette: {
+    type: 'light',
     primary: {
-      main: '#6e2dce',
-      light: '#9c70de',
-      dark: '##551fc0',
-      contrastText: '#fff',
+      main: '#5c2a83',
+      contrastText: '#fefae8',
     },
     secondary: {
-      main: '#8ece2d',
-      light: '#b2de74',
-      dark: '#68aa19',
-      contrastText: '#fff',
+      main: '#51832A',
     },
-    analogous1: {
-      main: '#be2dce',
-    },
-    analogous2: {
-      main: '#2d3dce',
+    background: {
+      default: '#fefae8',
+      paper: '#ffffff',
     },
   },
 });

@@ -1,11 +1,8 @@
 export const candidates = [
-  { name: 'Alexander Darlington', position: 'Mayor' },
-  { name: 'Tracey Sutton', position: 'Borough Council' },
-];
-
-export const writeInCandidates = [
-  { name: 'Hallie Langley', position: 'Borough Council' },
-  { name: 'Janet Mossie-Lance', position: 'Borough Council' },
+  { firstName: 'Alexander', lastName: 'Darlington', position: 'Mayor' },
+  { firstName: 'Tracey', lastName: 'Sutton', position: 'Borough Council' },
+  { firstName: 'Hallie', lastName: 'Langley', position: 'Borough Council', writeIn: true },
+  { firstName: 'Janet', lastName: 'Mossie-Lance', position: 'Borough Council', writeIn: true },
 ];
 
 export const aboutCandidates = [

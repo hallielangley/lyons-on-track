@@ -19,7 +19,7 @@ function Layout() {
         style={{
           flex: 1,
           marginTop: '64px', // Height of the AppBar
-          paddingTop: '20px', // Additional spacing
+          paddingTop: 1, // Additional spacing
           overflowY: 'auto',
           height: 'calc(100vh - 64px)',
         }}
