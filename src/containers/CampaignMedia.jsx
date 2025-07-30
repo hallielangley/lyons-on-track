@@ -5,6 +5,7 @@ import {
 } from '@mui/material';
 
 import CampaignSection from '../components/CampaignSection';
+import SwipeableTabs from '../components/SwipeableTabs';
 import { campaignSections } from '../data/campaignMedia';
 
 const CampaignMedia = () => {
@@ -17,9 +18,20 @@ const CampaignMedia = () => {
     document.body.removeChild(link);
   };
 
+  const renderSection = (section) => (
+    <CampaignSection
+      title={section.title}
+      palmCardFront={section.images.palmCardFront}
+      palmCardBack={section.images.palmCardBack}
+      yardSign={section.images.yardSign}
+      downloadItems={section.downloadItems}
+      onDownload={handleDownload}
+    />
+  );
+
   return (
     <Container>
-      <Box textAlign="center" mb={2} maxWidth={800} mx="auto">
+      <Box textAlign="center" maxWidth={800} mx="auto">
         <Typography variant="h2" component="h1" sx={{ fontWeight: 'bold' }}>
           Campaign Materials
         </Typography>
@@ -40,17 +52,10 @@ const CampaignMedia = () => {
         </Typography>
       </Box>
 
-      {campaignSections.map((section) => (
-        <CampaignSection
-          key={section.id}
-          title={section.title}
-          palmCardFront={section.images.palmCardFront}
-          palmCardBack={section.images.palmCardBack}
-          yardSign={section.images.yardSign}
-          downloadItems={section.downloadItems}
-          onDownload={handleDownload}
-        />
-      ))}
+      <SwipeableTabs 
+        sections={campaignSections}
+        renderSection={renderSection}
+      />
     </Container>
   );
 };
