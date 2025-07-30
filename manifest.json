@@ -5,11 +5,11 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#1976d2",
+  "theme_color": "#5c2a83",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/vite.svg",
+      "src": "/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
