@@ -33,4 +33,4 @@ export const NAV_ITEMS = [
 ];
 
 // Router basename for deployment
-export const ROUTER_BASENAME = '/lyons-on-track/'; 
+export const ROUTER_BASENAME = '/'; 
