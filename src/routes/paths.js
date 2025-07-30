@@ -5,6 +5,7 @@ export const PATHS = {
   CONTACT: '/contact',
   HOW_TO_VOTE: '/vote',
   SOLUTIONS: '/solutions',
+  CAMPAIGN_MEDIA: '/media',
 };
 
 // Navigation items configuration
@@ -25,6 +26,10 @@ export const NAV_ITEMS = [
   {
     path: PATHS.CANDIDATES,
     text: 'Our Candidates',
+  },
+  {
+    path: PATHS.CAMPAIGN_MEDIA,
+    text: 'Campaign Media',
   },
   {
     path: PATHS.CONTACT,

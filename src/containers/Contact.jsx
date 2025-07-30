@@ -14,18 +14,16 @@ function Contact() {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <Container maxWidth="md" sx={{ px: isMobile ? 2 : 3 }}>
+    <Container sx={{ textAlign: 'center' }}>
       <Typography
-        variant={isMobile ? 'h4' : 'h3'}
+        variant="h2"
         component="h1"
-        gutterBottom
         sx={{
-          textAlign: 'center',
-          mb: isMobile ? 3 : 4,
-          fontSize: isMobile ? '2rem' : '3rem',
+          fontWeight: 'bold',
+          mb: 1,
         }}
       >
-        Contact
+        Contact Us
       </Typography>
 
       <Paper elevation={3} sx={{ p: isMobile ? 3 : 4, textAlign: 'center' }}>
@@ -34,22 +32,18 @@ function Contact() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: 2,
           }}
         >
           <Email sx={{ fontSize: isMobile ? 40 : 60, color: 'primary.main' }} />
 
-          <Typography
-            variant={isMobile ? 'h6' : 'h5'}
-            component="h2"
-            gutterBottom
-          >
+          <Typography component="h2" variant="h6" >
             Have any comments, questions, or concerns?
+          </Typography>
+          <Typography component="h2" variant="h6" gutterBottom>
+            Want paper copies of our campaign materials?
           </Typography>
 
           <Typography
-            variant="body1"
-            sx={{ fontSize: isMobile ? '0.9rem' : '1rem' }}
           >
             Reach out to us at:
           </Typography>
@@ -70,8 +64,6 @@ function Contact() {
           </Link>
         </Box>
       </Paper>
-
-
     </Container>
   );
 }

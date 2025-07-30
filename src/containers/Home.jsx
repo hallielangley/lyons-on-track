@@ -6,13 +6,20 @@ import {
   Typography,
 } from '@mui/material';
 
-import { useResponsive } from '../hooks/useResponsive';
-
 function Home() {
-  const { getSpacing, getContainerPadding, getPadding } = useResponsive();
-
   return (
     <Container>
+      <Typography
+        variant="h2"
+        component="h1"
+        sx={{
+          fontWeight: 'bold',
+          mb: 1,
+          textAlign: 'center',
+        }}
+      >
+        Lyons on Track
+      </Typography>
       <Card sx={{ mb: 2 }}>
         <CardHeader title="Our Vision" />
         <CardContent>

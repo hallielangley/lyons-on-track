@@ -5,7 +5,7 @@ import { concernsAndSolutions } from '../data/concernsAndSolutions';
 import { useResponsive } from '../hooks/useResponsive';
 
 function OurSolutions() {
-  const { isMobile, getTypographyVariant, getSpacing } = useResponsive();
+  const { isMobile } = useResponsive();
 
   return (
     <Container
@@ -75,18 +75,8 @@ function OurSolutions() {
               }}
             >
               <FlipCard
-                front={
-                  <Typography variant="h5" >
-                    {item.concern}
-                  </Typography>
-                }
-                back={
-                  <Typography
-                    variant="body1"
-                  >
-                    {item.solution}
-                  </Typography>
-                }
+                front={<Typography variant="h5">{item.concern}</Typography>}
+                back={<Typography variant="body1">{item.solution}</Typography>}
                 height={isMobile ? 100 : 160}
                 width={isMobile ? '100%' : '280px'}
               />
@@ -114,18 +104,8 @@ function OurSolutions() {
               }}
             >
               <FlipCard
-                front={
-                  <Typography
-                    variant='h5'
-                  >
-                    {item.concern}
-                  </Typography>
-                }
-                back={
-                  <Typography variant="body2">
-                    {item.solution}
-                  </Typography>
-                }
+                front={<Typography variant="h5">{item.concern}</Typography>}
+                back={<Typography variant="body2">{item.solution}</Typography>}
                 height={isMobile ? 100 : 160}
                 width={isMobile ? '100%' : '280px'}
               />

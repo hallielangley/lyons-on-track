@@ -1,5 +1,6 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 
+import CampaignMedia from '../containers/CampaignMedia';
 import ContactUs from '../containers/Contact';
 import ErrorBoundary from '../components/ErrorBoundary';
 import Home from '../containers/Home';
@@ -7,9 +8,9 @@ import HowToVote from '../containers/HowToVote';
 import Layout from '../components/Layout';
 import OurCandidates from '../containers/OurCandidates';
 import OurSolutions from '../containers/OurSolutions';
-import { PATHS, ROUTER_BASENAME } from './paths';
+import { PATHS } from './paths';
 
-export const router = createBrowserRouter(
+export const router = createHashRouter(
   [
     {
       path: PATHS.HOME,
@@ -36,10 +37,11 @@ export const router = createBrowserRouter(
           path: PATHS.SOLUTIONS,
           element: <OurSolutions />,
         },
+        {
+          path: PATHS.CAMPAIGN_MEDIA,
+          element: <CampaignMedia />,
+        },
       ],
     },
-  ],
-  {
-    basename: ROUTER_BASENAME,
-  }
+  ]
 );

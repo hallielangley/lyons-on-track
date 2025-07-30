@@ -6,8 +6,29 @@ import {
   responsiveStyles,
 } from '../utils/responsiveStyles';
 
+// Import candidate images
+import AlexImage from '../assets/Alex.jpg';
+import TraceyImage from '../assets/Tracey.jpg';
+import JanetImage from '../assets/Janet.jpg';
+
 function CandidateCard({ candidate }) {
   const { isMobile, getAvatarSize } = useResponsive();
+
+  // Map candidate names to their images
+  const getCandidateImage = (name) => {
+    switch (name) {
+      case 'Alexander Darlington':
+        return AlexImage;
+      case 'Tracey Sutton':
+        return TraceyImage;
+      case 'Janet Mossie-Lance':
+        return JanetImage;
+      default:
+        return null; // For Hallie Langley, we'll use initials for now
+    }
+  };
+
+  const candidateImage = getCandidateImage(candidate.name);
 
   return (
     <Card sx={{ height: '100%' }}>
@@ -24,6 +45,7 @@ function CandidateCard({ candidate }) {
           }}
         >
           <Avatar
+            src={candidateImage}
             sx={{
               width: getAvatarSize(60, 80),
               height: getAvatarSize(60, 80),
@@ -31,7 +53,7 @@ function CandidateCard({ candidate }) {
               mb: isMobile ? 1 : 0,
             }}
           >
-            {candidate.initials}
+            {candidateImage ? null : candidate.initials}
           </Avatar>
           <Box>
 
@@ -43,22 +65,6 @@ function CandidateCard({ candidate }) {
             </Typography>
           </Box>
         </Box>
-
-        {candidate.imageNote && (
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{
-              mb: 2,
-              fontSize: getResponsiveValue(
-                responsiveStyles.fontSize.small,
-                isMobile
-              ),
-            }}
-          >
-            Note: {candidate.imageNote}
-          </Typography>
-        )}
 
         {candidate.bio.map((paragraph, index) => (
           <Typography
