@@ -15,9 +15,31 @@ import BoroughCouncilPalmCardBack from '../assets/BoroughCouncilPalmCardBack.jpg
 import BoroughCouncilPalmCardFront from '../assets/BoroughCouncilPalmCardFront.jpg';
 import BoroughCouncilYardSign from '../assets/BoroughCouncilYardSign.jpg';
 import BoroughCouncilYardSignPdf from '../assets/BoroughCouncilYardSign.pdf';
+import AlexPalmCardPdf from '../assets/AlexPalmCard.pdf';
+import AlexPalmCardBack from '../assets/AlexPalmCardBack.jpg';
+import AlexPalmCardFront from '../assets/AlexPalmCardFront.jpg';
+import AlexYardSign from '../assets/AlexYardSign.jpg';
+import AlexYardSignPdf from '../assets/AlexYardSign.pdf';
 
 const CampaignMedia = () => {
-  const downloadItems = [
+  const mayorDownloadItems = [
+    {
+      title: 'Palm Card',
+      description:
+        'Campaign palm card featuring Alex\'s key message and candidate information. Download includes both front and back sides.',
+      downloadUrl: AlexPalmCardPdf,
+      filename: 'AlexPalmCard.pdf',
+    },
+    {
+      title: 'Yard Sign',
+      description:
+        'Campaign yard sign design for supporters to display in their yards.',
+      downloadUrl: AlexYardSignPdf,
+      filename: 'AlexYardSign.pdf',
+    },
+  ];
+
+  const boroughCouncilDownloadItems = [
     {
       title: 'Palm Card',
       description:
@@ -66,7 +88,155 @@ const CampaignMedia = () => {
         </Typography>
       </Box>
 
-      {/* Image Preview Section */}
+      {/* Mayor Section */}
+      <Box mb={6}>
+        <Paper sx={{ p: 2 }}>
+          <Box textAlign="center">
+            <Typography variant="h4" gutterBottom color="primary">
+              Mayor Materials
+            </Typography>
+            <Typography variant="h5" color="primary">
+              Palm Card
+            </Typography>
+          </Box>
+          <Grid container spacing={4} justifyContent="center">
+            <Grid item xs={12} md={6}>
+              <Box
+                textAlign="center"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <Box
+                  component="img"
+                  src={AlexPalmCardFront}
+                  alt="Alex Palm Card Front"
+                  sx={{
+                    width: '100%',
+                    maxWidth: 400,
+                    height: 'auto',
+                    borderRadius: 1,
+                    boxShadow: 2,
+                  }}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box
+                textAlign="center"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <Box
+                  component="img"
+                  src={AlexPalmCardBack}
+                  alt="Alex Palm Card Back"
+                  sx={{
+                    width: '100%',
+                    maxWidth: 400,
+                    height: 'auto',
+                    borderRadius: 1,
+                    boxShadow: 2,
+                  }}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={12}>
+              <Box
+                textAlign="center"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <Typography variant="h5" color="primary">
+                  Yard Sign
+                </Typography>
+                <Box
+                  component="img"
+                  src={AlexYardSign}
+                  alt="Alex Yard Sign"
+                  sx={{
+                    width: '100%',
+                    maxWidth: 600,
+                    height: 'auto',
+                    borderRadius: 1,
+                    boxShadow: 2,
+                  }}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Download Buttons Section */}
+          <Box textAlign="center" mt={6}>
+            <Typography variant="h5" color="primary" gutterBottom>
+              Download Materials
+            </Typography>
+            <Box
+              sx={{
+                display: 'flex',
+                gap: 3,
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+              }}
+            >
+              {mayorDownloadItems.map((item, index) => (
+                <Box key={index} sx={{ flex: '1 1 300px', maxWidth: '400px' }}>
+                  <Card
+                    sx={{
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      transition: 'transform 0.2s ease-in-out',
+                      '&:hover': {
+                        transform: 'translateY(-4px)',
+                        boxShadow: 4,
+                      },
+                    }}
+                  >
+                    <CardContent
+                      sx={{
+                        flexGrow: 1,
+                        display: 'flex',
+                        flexDirection: 'column',
+                      }}
+                    >
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        component="h2"
+                        color="primary"
+                      >
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ mb: 2, flexGrow: 1 }}
+                      >
+                        {item.description}
+                      </Typography>
+                      <Button
+                        variant="contained"
+                        startIcon={<Download />}
+                        onClick={() =>
+                          handleDownload(item.downloadUrl, item.filename)
+                        }
+                        sx={{ alignSelf: 'center' }}
+                      >
+                        Download PDF
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        </Paper>
+      </Box>
+
+      {/* Borough Council Section */}
       <Box mb={6}>
         <Paper sx={{ p: 2 }}>
           <Box textAlign="center">
@@ -159,7 +329,7 @@ const CampaignMedia = () => {
                 flexWrap: 'wrap',
               }}
             >
-              {downloadItems.map((item, index) => (
+              {boroughCouncilDownloadItems.map((item, index) => (
                 <Box key={index} sx={{ flex: '1 1 300px', maxWidth: '400px' }}>
                   <Card
                     sx={{
