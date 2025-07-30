@@ -1,0 +1,21 @@
+{
+  "name": "Lyons on Track - Campaign for Positive Change",
+  "short_name": "Lyons on Track",
+  "description": "Support Alexander Darlington for Mayor and Tracey Sutton, Hallie Langley, and Janet Mossie-Lance for Borough Council. Join us in revitalizing Lyons, PA through transparency, communication, and community collaboration.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5c2a83",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["politics", "government", "local"],
+  "lang": "en-US",
+  "dir": "ltr"
+} 
