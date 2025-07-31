@@ -4,11 +4,8 @@ import { Avatar, Box, Card, CardContent, Typography } from '@mui/material';
 import AlexImage from '../assets/Alex.jpg';
 import JanetImage from '../assets/Janet.jpg';
 import TraceyImage from '../assets/Tracey.jpg';
-import { useResponsive } from '../hooks/useResponsive';
 
 function CandidateCard({ candidate }) {
-  const { isMobile } = useResponsive();
-
   // Map candidate names to their images
   const getCandidateImage = (name) => {
     switch (name) {

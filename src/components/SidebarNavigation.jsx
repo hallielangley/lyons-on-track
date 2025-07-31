@@ -19,13 +19,11 @@ import {
   Typography,
 } from '@mui/material';
 
-import { useResponsive } from '../hooks/useResponsive';
 import { NAV_ITEMS, PATHS } from '../routes/paths';
 
 function SidebarNavigation() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  const { isMobile, getNavText } = useResponsive();
 
   const navItems = NAV_ITEMS;
 

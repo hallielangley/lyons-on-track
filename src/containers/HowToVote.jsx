@@ -3,10 +3,8 @@ import { Box, Grid, Paper, Typography } from '@mui/material';
 import boroughHallImage from '../assets/borough-hall.jpg';
 import CandidateItem from '../components/CandidateItem';
 import { candidates } from '../data/candidates';
-import { useResponsive } from '../hooks/useResponsive';
 
 function HowToVote() {
-  const { getPadding } = useResponsive();
 
   return (
     <Grid
@@ -26,8 +24,8 @@ function HowToVote() {
       >
         <Paper
           sx={{
-            px: getPadding(2, 3),
-            py: getPadding(3, 4),
+            px: { xs: 2, md: 3 },
+            py: { xs: 3, md: 4 },
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
@@ -51,7 +49,7 @@ function HowToVote() {
           />
           <Box
             sx={{
-              py: getPadding(1, 2),
+              py: { xs: 1, md: 2 },
               display: { xs: 'flex', md: 'block' },
               flexDirection: 'row',
               width: '100%',

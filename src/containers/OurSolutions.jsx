@@ -116,9 +116,7 @@ function OurSolutions() {
 
       {/* Fixed Footer Section */}
       <Box sx={{ flexShrink: 0, py: 1 }}>
-        <Typography
-          sx={{ fontSize: isMobile ? '0.8rem' : '0.9rem', fontWeight: 500 }}
-        >
+        <Typography sx={{ fontWeight: 500 }}>
           We're committed to working together to make Lyons an even better place
           to live.
         </Typography>

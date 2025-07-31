@@ -9,19 +9,11 @@ export const useResponsive = () => {
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg')); // >= 1200px
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // < 600px
 
-  // Custom navigation text logic - MUI doesn't handle this
-  const getNavText = (mobileText, desktopText) => {
-    return isMobile ? mobileText : desktopText;
-  };
-
   return {
     // Breakpoint flags - useful for conditional logic
     isMobile,
     isTablet,
     isDesktop,
     isSmallScreen,
-
-    // Custom utilities that MUI doesn't provide
-    getNavText,
   };
 };
