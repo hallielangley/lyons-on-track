@@ -1,4 +1,7 @@
-// import AlexPalmCardPdf from '../assets/AlexPalmCard.pdf';
+// Feature flag to easily toggle download functionality
+export const ENABLE_DOWNLOADS = true;
+
+// Import all assets (only the ones we need will be used based on ENABLE_DOWNLOADS)
 import AlexPalmCardBack from '../assets/AlexPalmCardBack.jpg';
 import AlexPalmCardFront from '../assets/AlexPalmCardFront.jpg';
 import AlexYardSign from '../assets/AlexYardSign.jpg';
@@ -8,7 +11,38 @@ import BoroughCouncilPalmCardFront from '../assets/BoroughCouncilPalmCardFront.j
 import BoroughCouncilYardSign from '../assets/BoroughCouncilYardSign.jpg';
 import BoroughCouncilYardSignPdf from '../assets/BoroughCouncilYardSign.pdf';
 
-// import AlexYardSignPdf from '../assets/AlexYardSign.pdf';
+// Download items configuration
+const downloadItems = {
+  mayor: ENABLE_DOWNLOADS ? [
+    {
+      title: 'Palm Card',
+      description: 'Campaign palm card featuring Alex\'s key message and candidate information. Download includes both front and back sides.',
+      downloadUrl: BoroughCouncilPalmCardPdf, // Using available PDF for now
+      filename: 'AlexPalmCard.pdf',
+    },
+    {
+      title: 'Yard Sign',
+      description: 'Campaign yard sign design for supporters to display in their yards.',
+      downloadUrl: BoroughCouncilYardSignPdf, // Using available PDF for now
+      filename: 'AlexYardSign.pdf',
+    },
+  ] : [],
+  
+  'borough-council': ENABLE_DOWNLOADS ? [
+    {
+      title: 'Palm Card',
+      description: 'Campaign palm card featuring our key message and candidate information. Download includes both front and back sides.',
+      downloadUrl: BoroughCouncilPalmCardPdf,
+      filename: 'BoroughCouncilPalmCard.pdf',
+    },
+    {
+      title: 'Yard Sign',
+      description: 'Campaign yard sign design for supporters to display in their yards.',
+      downloadUrl: BoroughCouncilYardSignPdf,
+      filename: 'BoroughCouncilYardSign.pdf',
+    },
+  ] : [],
+};
 
 export const campaignSections = [
   {
@@ -19,22 +53,7 @@ export const campaignSections = [
       palmCardBack: AlexPalmCardBack,
       yardSign: AlexYardSign,
     },
-    // downloadItems: [
-    //   {
-    //     title: 'Palm Card',
-    //     description:
-    //       'Campaign palm card featuring Alex\'s key message and candidate information. Download includes both front and back sides.',
-    //     downloadUrl: AlexPalmCardPdf,
-    //     filename: 'AlexPalmCard.pdf',
-    //   },
-    //   {
-    //     title: 'Yard Sign',
-    //     description:
-    //       'Campaign yard sign design for supporters to display in their yards.',
-    //     downloadUrl: AlexYardSignPdf,
-    //     filename: 'AlexYardSign.pdf',
-    //   },
-    // ],
+    downloadItems: downloadItems.mayor,
   },
   {
     id: 'borough-council',
@@ -44,21 +63,6 @@ export const campaignSections = [
       palmCardBack: BoroughCouncilPalmCardBack,
       yardSign: BoroughCouncilYardSign,
     },
-    // downloadItems: [
-    //   {
-    //     title: 'Palm Card',
-    //     description:
-    //       'Campaign palm card featuring our key message and candidate information. Download includes both front and back sides.',
-    //     downloadUrl: BoroughCouncilPalmCardPdf,
-    //     filename: 'BoroughCouncilPalmCard.pdf',
-    //   },
-    //   {
-    //     title: 'Yard Sign',
-    //     description:
-    //       'Campaign yard sign design for supporters to display in their yards.',
-    //     downloadUrl: BoroughCouncilYardSignPdf,
-    //     filename: 'BoroughCouncilYardSign.pdf',
-    //   },
-    // ],
+    downloadItems: downloadItems['borough-council'],
   },
 ];

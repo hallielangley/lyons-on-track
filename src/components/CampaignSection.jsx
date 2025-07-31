@@ -2,6 +2,7 @@ import { Box, Grid, Paper, Typography } from '@mui/material';
 
 import DownloadCard from './DownloadCard';
 import ImagePreview from './ImagePreview';
+import { ENABLE_DOWNLOADS } from '../data/campaignMedia';
 
 const CampaignSection = ({
   title,
@@ -51,28 +52,30 @@ const CampaignSection = ({
         </Grid>
       </Grid>
 
-      {/* Download Buttons Section */}
-      {/* <Box textAlign="center" mt={6}>
-        <Typography variant="h5" color="primary" gutterBottom>
-          Download Materials
-        </Typography>
-        <Box
-          sx={{
-            display: 'flex',
-            gap: 3,
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-          }}
-        >
-          {downloadItems.map((item, index) => (
-            <DownloadCard 
-              key={index} 
-              item={item} 
-              onDownload={onDownload} 
-            />
-          ))}
+      {/* Download Buttons Section - Only shown when ENABLE_DOWNLOADS is true */}
+      {ENABLE_DOWNLOADS && downloadItems && downloadItems.length > 0 && (
+        <Box textAlign="center" mt={6}>
+          <Typography variant="h5" color="primary" gutterBottom>
+            Download Materials
+          </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 3,
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+            }}
+          >
+            {downloadItems.map((item, index) => (
+              <DownloadCard 
+                key={index} 
+                item={item} 
+                onDownload={onDownload} 
+              />
+            ))}
+          </Box>
         </Box>
-      </Box> */}
+      )}
     </Paper>
   </Box>
 );
