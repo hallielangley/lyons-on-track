@@ -2,7 +2,6 @@ import { RouterProvider } from 'react-router-dom';
 
 import { CssBaseline, ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
 
-import './App.css';
 import { router } from './routes';
 
 let theme = createTheme({
