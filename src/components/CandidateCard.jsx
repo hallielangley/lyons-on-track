@@ -1,18 +1,13 @@
 import { Avatar, Box, Card, CardContent, Typography } from '@mui/material';
 
-import { useResponsive } from '../hooks/useResponsive';
-import {
-  getResponsiveValue,
-  responsiveStyles,
-} from '../utils/responsiveStyles';
-
 // Import candidate images
 import AlexImage from '../assets/Alex.jpg';
-import TraceyImage from '../assets/Tracey.jpg';
 import JanetImage from '../assets/Janet.jpg';
+import TraceyImage from '../assets/Tracey.jpg';
+import { useResponsive } from '../hooks/useResponsive';
 
 function CandidateCard({ candidate }) {
-  const { isMobile, getAvatarSize } = useResponsive();
+  const { isMobile } = useResponsive();
 
   // Map candidate names to their images
   const getCandidateImage = (name) => {
@@ -32,31 +27,28 @@ function CandidateCard({ candidate }) {
 
   return (
     <Card sx={{ height: '100%' }}>
-      <CardContent
-        sx={{ p: getResponsiveValue(responsiveStyles.padding.card, isMobile) }}
-      >
+      <CardContent sx={{ p: { xs: 2, md: 3 } }}>
         <Box
           sx={{
             display: 'flex',
             alignItems: 'center',
             mb: 2,
-            flexDirection: isMobile ? 'column' : 'row',
-            textAlign: isMobile ? 'center' : 'left',
+            flexDirection: { xs: 'column', md: 'row' },
+            textAlign: { xs: 'center', md: 'left' },
           }}
         >
           <Avatar
             src={candidateImage}
             sx={{
-              width: getAvatarSize(60, 80),
-              height: getAvatarSize(60, 80),
-              mr: isMobile ? 0 : 2,
-              mb: isMobile ? 1 : 0,
+              width: { xs: 60, md: 80 },
+              height: { xs: 60, md: 80 },
+              mr: { xs: 0, md: 2 },
+              mb: { xs: 1, md: 0 },
             }}
           >
             {candidateImage ? null : candidate.initials}
           </Avatar>
           <Box>
-
             <Typography variant="h4" component="h2">
               {candidate.name}
             </Typography>
@@ -72,10 +64,7 @@ function CandidateCard({ candidate }) {
             variant="body1"
             paragraph={index < candidate.bio.length - 1}
             sx={{
-              fontSize: getResponsiveValue(
-                responsiveStyles.fontSize.normal,
-                isMobile
-              ),
+              fontSize: { xs: '0.9rem', md: '1rem' },
             }}
           >
             {paragraph}

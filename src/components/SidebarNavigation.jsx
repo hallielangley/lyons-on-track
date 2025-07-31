@@ -13,16 +13,13 @@ import {
   List,
   ListItem,
   ListItemButton,
+  ListItemIcon,
   ListItemText,
   Toolbar,
   Typography,
 } from '@mui/material';
 
 import { useResponsive } from '../hooks/useResponsive';
-import {
-  getResponsiveValue,
-  responsiveStyles,
-} from '../utils/responsiveStyles';
 import { NAV_ITEMS, PATHS } from '../routes/paths';
 
 function SidebarNavigation() {
@@ -56,10 +53,6 @@ function SidebarNavigation() {
           sx={{
             color: 'white',
             textDecoration: 'none',
-            fontSize: getResponsiveValue(
-              responsiveStyles.fontSize.large,
-              isMobile
-            ),
             fontWeight: 'bold',
             textAlign: 'center',
             cursor: 'pointer',
@@ -92,10 +85,6 @@ function SidebarNavigation() {
           variant="h6"
           sx={{
             fontWeight: 'bold',
-            fontSize: getResponsiveValue(
-              responsiveStyles.fontSize.large,
-              isMobile
-            ),
           }}
         >
           Navigation
@@ -133,10 +122,6 @@ function SidebarNavigation() {
                 sx={{
                   '& .MuiListItemText-primary': {
                     fontWeight: 'bold',
-                    fontSize: getResponsiveValue(
-                      responsiveStyles.fontSize.normal,
-                      isMobile
-                    ),
                   },
                 }}
               />
@@ -150,24 +135,26 @@ function SidebarNavigation() {
   return (
     <>
       {!open && appBarHeader}
-      <Drawer
-        variant="temporary"
-        open={open}
-        onClose={handleDrawerToggle}
-        ModalProps={{
-          keepMounted: true, // Better open performance on mobile.
-        }}
-        sx={{
-          display: { xs: 'block' },
-          '& .MuiDrawer-paper': {
-            boxSizing: 'border-box',
-            width: drawerWidth,
-            backgroundColor: 'background.paper',
-          },
-        }}
-      >
-        {drawer}
-      </Drawer>
+      <Box component="nav">
+        <Drawer
+          variant="temporary"
+          open={open}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: 'block' },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+              backgroundColor: 'background.paper',
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
     </>
   );
 }
