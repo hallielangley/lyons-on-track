@@ -3,6 +3,7 @@ import { createHashRouter } from 'react-router-dom';
 import CampaignMedia from '../containers/CampaignMedia';
 import ContactUs from '../containers/Contact';
 import ErrorBoundary from '../components/ErrorBoundary';
+import ErrorTestComponent from '../components/ErrorTestComponent';
 import Home from '../containers/Home';
 import HowToVote from '../containers/HowToVote';
 import Layout from '../components/Layout';
@@ -40,6 +41,10 @@ export const router = createHashRouter(
         {
           path: PATHS.CAMPAIGN_MEDIA,
           element: <CampaignMedia />,
+        },
+        {
+          path: PATHS.ERROR_TEST,
+          element: <ErrorTestComponent />,
         },
       ],
     },

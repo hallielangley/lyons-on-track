@@ -7,8 +7,12 @@ import {
 import CampaignSection from '../components/CampaignSection';
 import SwipeableTabs from '../components/SwipeableTabs';
 import { campaignSections } from '../data/campaignMedia';
+import { useAppNavigation } from '../routes/utils';
+import { PATHS } from '../routes/paths';
 
 const CampaignMedia = () => {
+  const { goTo } = useAppNavigation();
+
   const handleDownload = (downloadUrl, filename) => {
     const link = document.createElement('a');
     link.href = downloadUrl;
@@ -43,8 +47,12 @@ const CampaignMedia = () => {
         <Typography variant="h6" color="text.secondary">
           Want physical materials?{' '}
           <a
-            href="/contact"
-            style={{ color: 'primary.main', textDecoration: 'underline' }}
+            onClick={() => goTo(PATHS.CONTACT)}
+            style={{ 
+              color: 'primary.main', 
+              textDecoration: 'underline',
+              cursor: 'pointer' 
+            }}
           >
             Contact us
           </a>{' '}

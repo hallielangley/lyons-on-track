@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { PATHS, ROUTE_METADATA } from './paths';
+import { PATHS } from './paths';
 
 // Custom hook for navigation with additional features
 export const useAppNavigation = () => {
@@ -31,5 +31,3 @@ export const useAppNavigation = () => {
     currentPath: location.pathname,
   };
 };
-
-export { ROUTE_METADATA };

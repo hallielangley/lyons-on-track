@@ -6,6 +6,7 @@ export const PATHS = {
   HOW_TO_VOTE: '/vote',
   SOLUTIONS: '/solutions',
   CAMPAIGN_MEDIA: '/media',
+  ERROR_TEST: '/error-test',
 };
 
 // Navigation items configuration
