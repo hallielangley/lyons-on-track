@@ -2,6 +2,7 @@ import { Avatar, Box, Card, CardContent, Typography } from '@mui/material';
 
 // Import candidate images
 import AlexImage from '../assets/Alex.jpg';
+import HallieImage from '../assets/Hallie.jpg';
 import JanetImage from '../assets/Janet.jpg';
 import TraceyImage from '../assets/Tracey.jpg';
 
@@ -11,12 +12,14 @@ function CandidateCard({ candidate }) {
     switch (name) {
       case 'Alexander Darlington':
         return AlexImage;
+      case 'Hallie Langley':
+        return HallieImage;
       case 'Tracey Sutton':
         return TraceyImage;
       case 'Janet Mossie-Lance':
         return JanetImage;
       default:
-        return null; // For Hallie Langley, we'll use initials for now
+        return null;
     }
   };
 

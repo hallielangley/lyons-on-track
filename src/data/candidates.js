@@ -39,7 +39,11 @@ export const aboutCandidates = [
     name: 'Hallie Langley',
     position: 'Borough Council Candidate',
     initials: 'HL',
-    bio: ['Enter text here'],
+    bio: [
+      'Hallie Langley is a software engineer and personal tutor with a Master\'s degree in Computer Science from Kutztown University. A long-time resident of nearby Kutztown and now a proud Lyons homeowner, Hallie brings a unique blend of technical expertise and community perspective to the Borough Council race.',
+      'When not coding or tutoring, Hallie can be found enjoying the simple pleasures of Lyons life, including sitting on the porch and watching the DEKA trucks drive by. Hallie\'s technical skills were instrumental in creating this campaign website, demonstrating a hands-on approach to community engagement and modern communication.',
+      'Motivated by Mayoral Candidate Alex Darlington\'s vision and energy, Hallie is eager to bring that same drive and enthusiasm to Borough Council. With a focus on modernizing Lyons while preserving its charm, Hallie looks forward to working collaboratively to build a better future for the borough.',
+    ],
   },
   {
     name: 'Janet Mossie-Lance',
