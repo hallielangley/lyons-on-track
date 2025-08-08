@@ -1,10 +1,16 @@
 // Utility to fetch link preview data from external URLs
 export const fetchLinkPreview = async (url) => {
   try {
+    console.log('Fetching preview for:', url);
     // Use a CORS proxy to fetch the external URL
     const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+    console.log('Using proxy URL:', proxyUrl);
+    
     const response = await fetch(proxyUrl);
+    console.log('Response status:', response.status);
+    
     const data = await response.json();
+    console.log('Response data:', data);
     
     if (!data.contents) {
       throw new Error('No content received');
@@ -68,6 +74,7 @@ export const fetchLinkPreview = async (url) => {
       favicon: getFavicon(),
     };
 
+    console.log('Extracted preview:', preview);
     return preview;
   } catch (error) {
     console.error('Error fetching link preview:', error);

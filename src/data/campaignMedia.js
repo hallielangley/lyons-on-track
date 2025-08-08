@@ -62,10 +62,7 @@ export const campaignSections = [
     links: [
       {
         url: 'https://berksweekly.com/news/politics/alexander-darlington-announces-campaign-for-mayor-of-lyons/',
-      },
-      {
-        url: 'https://berksweekly.com/news/politics/alexander-darlington-announces-campaign-for-mayor-of-lyons/',
-      },
+      }
     ],
   },
   {
