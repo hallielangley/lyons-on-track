@@ -56,6 +56,14 @@ const CampaignMedia = () => {
         <Typography variant="h2" component="h1" sx={{ fontWeight: 'bold' }}>
           Campaign Materials
         </Typography>
+      </Box>
+
+      <SwipeableTabs
+        sections={campaignSections}
+        renderSection={renderSection}
+      />
+
+      <Box textAlign="center" maxWidth={800} mx="auto" sx={{ mt: 4 }}>
         <Typography variant="h6" color="text.secondary" gutterBottom>
           Download and share our campaign materials with friends, family, and
           neighbors to help spread awareness about our campaign for positive
@@ -76,11 +84,6 @@ const CampaignMedia = () => {
           to arrange pickup or delivery.
         </Typography>
       </Box>
-
-      <SwipeableTabs
-        sections={campaignSections}
-        renderSection={renderSection}
-      />
     </Container>
   );
 };

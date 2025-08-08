@@ -7,9 +7,8 @@ import {
   Paper,
   useTheme,
   useMediaQuery,
-  IconButton,
 } from '@mui/material';
-import { ChevronLeft, ChevronRight } from '@mui/icons-material';
+
 
 const SwipeableTabs = ({ sections, renderSection }) => {
   const [value, setValue] = useState(0);
@@ -87,89 +86,67 @@ const SwipeableTabs = ({ sections, renderSection }) => {
             mx: 2,
           }}
         >
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant={isMobile ? "fullWidth" : "standard"}
-            centered={!isMobile}
-            sx={{
-              '& .MuiTab-root': {
-                minHeight: 64,
-                fontSize: '1rem',
-                fontWeight: 600,
-                textTransform: 'none',
-              },
-              '& .MuiTabs-indicator': {
-                height: 3,
-              },
-            }}
-          >
-            {sections.map((section, index) => (
-              <Tab 
-                key={section.id} 
-                label={section.title}
-                sx={{
-                  '&.Mui-selected': {
-                    color: 'primary.main',
-                  },
-                }}
-              />
-            ))}
+                     <Tabs
+             value={value}
+             onChange={handleChange}
+             variant={isMobile ? "scrollable" : "standard"}
+             scrollButtons={false}
+             allowScrollButtonsMobile={false}
+             centered={!isMobile}
+             sx={{
+               '& .MuiTab-root': {
+                 minHeight: 64,
+                 fontSize: '1rem',
+                 fontWeight: 600,
+                 textTransform: 'none',
+                 minWidth: isMobile ? 'auto' : 120,
+                 flexShrink: 0,
+               },
+               '& .MuiTabs-indicator': {
+                 height: 3,
+               },
+               '& .MuiTabs-scrollButtons': {
+                 '&.Mui-disabled': {
+                   opacity: 0.3,
+                 },
+               },
+             }}
+           >
+                         {sections.map((section, index) => (
+               <Tab 
+                 key={section.id} 
+                                   label={
+                    <Box sx={{ textAlign: 'center', lineHeight: 1.2 }}>
+                      {(() => {
+                        const title = section.title;
+                        if (title === 'Mayoral Election Materials') {
+                          return <>Mayoral<br />Election Materials</>;
+                        } else if (title === 'Borough Council Election Materials') {
+                          return <>Borough Council<br />Election Materials</>;
+                        } else if (title === 'In the News') {
+                          return <>In the<br />News</>;
+                        }
+                        return title;
+                      })()}
+                    </Box>
+                  }
+                 sx={{
+                   '&.Mui-selected': {
+                     color: 'primary.main',
+                   },
+                   minHeight: 80,
+                   py: 1,
+                 }}
+               />
+             ))}
           </Tabs>
         </Paper>
 
 
       </Box>
 
-      {/* Content Area */}
-      <Box sx={{ position: 'relative' }}>
-        {/* Navigation Arrows */}
-        {!isMobile && sections.length > 1 && (
-          <>
-            <IconButton
-              onClick={handlePrev}
-              disabled={value === 0}
-              sx={{
-                position: 'absolute',
-                left: -20,
-                top: '50%',
-                transform: 'translateY(-50%)',
-                zIndex: 1,
-                bgcolor: 'background.paper',
-                boxShadow: 2,
-                '&:hover': {
-                  bgcolor: 'background.paper',
-                },
-                '&.Mui-disabled': {
-                  opacity: 0.3,
-                },
-              }}
-            >
-              <ChevronLeft />
-            </IconButton>
-            <IconButton
-              onClick={handleNext}
-              disabled={value === sections.length - 1}
-              sx={{
-                position: 'absolute',
-                right: -20,
-                top: '50%',
-                transform: 'translateY(-50%)',
-                zIndex: 1,
-                bgcolor: 'background.paper',
-                boxShadow: 2,
-                '&:hover': {
-                  bgcolor: 'background.paper',
-                },
-                '&.Mui-disabled': {
-                  opacity: 0.3,
-                },
-              }}
-            >
-              <ChevronRight />
-            </IconButton>
-          </>
-        )}
+             {/* Content Area */}
+       <Box sx={{ position: 'relative' }}>
 
         <Box
           ref={scrollContainerRef}
