@@ -1,4 +1,5 @@
 import { RouterProvider } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
 import { CssBaseline, ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
 
@@ -32,10 +33,12 @@ theme = responsiveFontSizes(theme);
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }
 

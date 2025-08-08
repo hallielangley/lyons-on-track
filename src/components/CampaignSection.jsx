@@ -27,13 +27,13 @@ const CampaignSection = ({
       </Typography>
 
       <Grid container spacing={4} justifyContent="center">
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <ImagePreview src={palmCardFront} alt={`${title} Palm Card Front`} />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <ImagePreview src={palmCardBack} alt={`${title} Palm Card Back`} />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Box
             textAlign="center"
             display="flex"

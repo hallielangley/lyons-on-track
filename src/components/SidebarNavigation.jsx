@@ -31,8 +31,16 @@ function SidebarNavigation() {
     setOpen(!open);
   };
 
-  const handleNavClick = () => {
-    setOpen(false);
+  const handleNavClick = (event) => {
+    // Remove focus from the clicked element first
+    if (event.currentTarget) {
+      event.currentTarget.blur();
+    }
+    
+    // Close drawer with a tiny delay to allow navigation to complete
+    setTimeout(() => {
+      setOpen(false);
+    }, 50);
   };
 
   const drawerWidth = 280;
@@ -66,7 +74,7 @@ function SidebarNavigation() {
   );
 
   const drawer = (
-    <Box sx={{ width: drawerWidth }}>
+    <Box sx={{ width: drawerWidth }} role="navigation" aria-label="Main navigation">
       <Box
         sx={{
           p: 2,
@@ -80,6 +88,7 @@ function SidebarNavigation() {
           <CloseIcon />
         </IconButton>
         <Typography
+          id="drawer-title"
           variant="h6"
           sx={{
             fontWeight: 'bold',
@@ -89,7 +98,7 @@ function SidebarNavigation() {
         </Typography>
         <Box sx={{ width: 40 }} />
       </Box>
-      <List sx={{ pt: 1 }}>
+      <List id="drawer-description" sx={{ pt: 1 }}>
         {navItems.map((item) => (
           <ListItem key={item.path} disablePadding>
             <ListItemButton
@@ -140,6 +149,13 @@ function SidebarNavigation() {
           onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
+            disableEnforceFocus: true, // Prevent focus management conflicts
+            disableAutoFocus: true, // Prevent auto focus issues
+            disableRestoreFocus: true, // Prevent restore focus issues
+          }}
+          PaperProps={{
+            'aria-labelledby': 'drawer-title',
+            'aria-describedby': 'drawer-description',
           }}
           sx={{
             display: { xs: 'block' },

@@ -8,7 +8,7 @@ const ExternalLinksSection = ({ links }) => {
       {/* Links Grid */}
       <Grid container justifyContent="center">
         {links.map((link, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <Grid size={{ xs: 12, md: 4 }} key={index}>
             <ExternalLinkSection url={link.url} />
           </Grid>
         ))}
