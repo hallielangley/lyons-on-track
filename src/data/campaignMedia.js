@@ -10,6 +10,7 @@ import BoroughCouncilPalmCardBack from '../assets/BoroughCouncilPalmCardBack.jpg
 import BoroughCouncilPalmCardFront from '../assets/BoroughCouncilPalmCardFront.jpg';
 import BoroughCouncilYardSign from '../assets/BoroughCouncilYardSign.jpg';
 import BoroughCouncilYardSignPdf from '../assets/BoroughCouncilYardSign.pdf';
+// import BerksWeeklyImage from '../assets/berks-weekly-alex.jpg'; // Uncomment when you add the image
 
 // Download items configuration
 const downloadItems = {
@@ -47,6 +48,7 @@ const downloadItems = {
 export const campaignSections = [
   {
     id: 'mayor',
+    type: 'downloads',
     title: 'Mayoral Election Materials',
     images: {
       palmCardFront: AlexPalmCardFront,
@@ -57,6 +59,7 @@ export const campaignSections = [
   },
   {
     id: 'borough-council',
+    type: 'downloads',
     title: 'Borough Council Election Materials',
     images: {
       palmCardFront: BoroughCouncilPalmCardFront,
@@ -65,4 +68,14 @@ export const campaignSections = [
     },
     downloadItems: downloadItems['borough-council'],
   },
+  {
+    id: 'berks-weekly-news',
+    type: 'external-links',
+    title: 'In the News',
+    links: [
+      {
+        url: 'https://berksweekly.com/news/politics/alexander-darlington-announces-campaign-for-mayor-of-lyons/',
+      }
+    ]
+  }
 ];

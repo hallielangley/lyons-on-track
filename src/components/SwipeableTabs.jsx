@@ -118,21 +118,7 @@ const SwipeableTabs = ({ sections, renderSection }) => {
           </Tabs>
         </Paper>
 
-        {/* Swipe Indicator for Mobile */}
-        {isMobile && sections.length > 1 && (
-          <Box
-            sx={{
-              textAlign: 'center',
-              mt: 2,
-              color: 'text.secondary',
-              fontSize: '0.875rem',
-            }}
-          >
-            <Typography variant="caption">
-              Swipe to view different materials
-            </Typography>
-          </Box>
-        )}
+
       </Box>
 
       {/* Content Area */}

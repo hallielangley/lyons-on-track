@@ -1,14 +1,12 @@
-import {
-  Box,
-  Container,
-  Typography,
-} from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 
 import CampaignSection from '../components/CampaignSection';
+import ExternalLinkSection from '../components/ExternalLinkSection';
+import ExternalLinksSection from '../components/ExternalLinksSection';
 import SwipeableTabs from '../components/SwipeableTabs';
 import { campaignSections } from '../data/campaignMedia';
-import { useAppNavigation } from '../routes/utils';
 import { PATHS } from '../routes/paths';
+import { useAppNavigation } from '../routes/utils';
 
 const CampaignMedia = () => {
   const { goTo } = useAppNavigation();
@@ -22,16 +20,35 @@ const CampaignMedia = () => {
     document.body.removeChild(link);
   };
 
-  const renderSection = (section) => (
-    <CampaignSection
-      title={section.title}
-      palmCardFront={section.images.palmCardFront}
-      palmCardBack={section.images.palmCardBack}
-      yardSign={section.images.yardSign}
-      downloadItems={section.downloadItems}
-      onDownload={handleDownload}
-    />
-  );
+  const renderSection = (section) => {
+    switch (section.type) {
+      case 'downloads':
+        return (
+          <CampaignSection
+            title={section.title}
+            palmCardFront={section.images.palmCardFront}
+            palmCardBack={section.images.palmCardBack}
+            yardSign={section.images.yardSign}
+            downloadItems={section.downloadItems}
+            onDownload={handleDownload}
+          />
+        );
+      case 'external-link':
+        return (
+          <ExternalLinkSection
+            title={section.title}
+            description={section.description}
+            url={section.url}
+            buttonText={section.buttonText}
+            image={section.image}
+          />
+        );
+      case 'external-links':
+        return <ExternalLinksSection links={section.links} />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <Container>
@@ -48,10 +65,10 @@ const CampaignMedia = () => {
           Want physical materials?{' '}
           <a
             onClick={() => goTo(PATHS.CONTACT)}
-            style={{ 
-              color: 'primary.main', 
+            style={{
+              color: 'primary.main',
               textDecoration: 'underline',
-              cursor: 'pointer' 
+              cursor: 'pointer',
             }}
           >
             Contact us
@@ -60,7 +77,7 @@ const CampaignMedia = () => {
         </Typography>
       </Box>
 
-      <SwipeableTabs 
+      <SwipeableTabs
         sections={campaignSections}
         renderSection={renderSection}
       />
