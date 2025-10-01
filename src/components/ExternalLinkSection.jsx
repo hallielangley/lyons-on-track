@@ -15,23 +15,39 @@ const ExternalLinkSection = ({
 
   useEffect(() => {
     const fetchPreview = async () => {
-      setLoading(true);
+      // If we have props data, show it immediately and fetch preview in background
+      if (title || description || image) {
+        setLoading(false);
+      } else {
+        setLoading(true);
+      }
+
       try {
-        const data = await getCachedLinkPreview(url);
-        setPreview(data);
+        // Add timeout to prevent hanging requests
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Timeout')), 3000)
+        );
+        
+        const dataPromise = getCachedLinkPreview(url);
+        const data = await Promise.race([dataPromise, timeoutPromise]);
+        
+        if (data) {
+          setPreview(data);
+        }
       } catch (error) {
         console.error('Failed to fetch preview:', error);
+        // Don't show error to user, just use fallback
       } finally {
         setLoading(false);
       }
     };
 
     fetchPreview();
-  }, [url]);
+  }, [url, title, description, image]);
 
   // Use fetched preview data or fall back to props
-  const displayTitle = preview?.title || title;
-  const displayDescription = preview?.description || description;
+  const displayTitle = preview?.title || title || 'External Link';
+  const displayDescription = preview?.description || description || 'Click to visit this external resource.';
   const displayImage = preview?.image || image;
   const displayFavicon = preview?.favicon;
   const handleClick = () => {
@@ -136,7 +152,7 @@ const ExternalLinkSection = ({
               overflow: 'hidden',
             }}
           >
-            {loading ? (
+            {loading && !displayImage ? (
               <Skeleton
                 variant="rectangular"
                 width="100%"
@@ -182,7 +198,7 @@ const ExternalLinkSection = ({
 
           {/* Title and Read More */}
           <Box sx={{ p: 2 }}>
-            {loading ? (
+            {loading && !displayTitle && !displayDescription ? (
               <>
                 <Skeleton
                   variant="text"

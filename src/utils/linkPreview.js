@@ -4,7 +4,19 @@ export const fetchLinkPreview = async (url) => {
     // Use a CORS proxy to fetch the external URL
     const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
 
-    const response = await fetch(proxyUrl);
+    // Add timeout to the fetch request
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
+    const response = await fetch(proxyUrl, {
+      signal: controller.signal,
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
     const data = await response.json();
 
@@ -73,7 +85,7 @@ export const fetchLinkPreview = async (url) => {
     };
 
     return preview;
-  } catch (error) {
+  } catch {
     return null;
   }
 };

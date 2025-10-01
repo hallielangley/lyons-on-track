@@ -372,7 +372,7 @@ function Home() {
                 </Typography>
                 <Button
                   variant="contained"
-                  onClick={() => goTo(PATHS.MEDIA)}
+                  onClick={() => goTo(PATHS.CAMPAIGN_MEDIA)}
                   sx={{ mt: 'auto' }}
                 >
                   Get Materials
